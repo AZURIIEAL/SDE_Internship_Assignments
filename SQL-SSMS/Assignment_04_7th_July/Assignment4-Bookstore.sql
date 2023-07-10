@@ -62,13 +62,13 @@ INSERT INTO BookDatatable (Title, Author, Price, PublicationYear,BookSeller, Boo
 
 SELECT COUNT(*) AS TotalBooksArrived2022
 FROM BookDatatable
-WHERE YEAR(CreatedOn) = 2022;
+WHERE YEAR(CreatedOn) = YEAR(GETDATE())-1;
 
 --ii) Display the no. of books arrived on every Monday during the last year
 SELECT COUNT(*) AS BooksArrivedOnMondays2022
 FROM BookDatatable
 WHERE DATEPART(weekday, CreatedOn) = 2 -- Monday
-  AND YEAR(CreatedOn) = 2022;
+  AND YEAR(CreatedOn) = YEAR(GETDATE())-1;
 
 
 
