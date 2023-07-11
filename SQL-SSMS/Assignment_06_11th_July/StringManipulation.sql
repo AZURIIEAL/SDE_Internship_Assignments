@@ -1,5 +1,11 @@
---STRING_MANIPULATIONSUBSTRING
+--STRING_MANIPULATION
 --______________________________________________________________________________________
+
+
+--SUBSTRING //extracts some characters from a string.
+
+SELECT SUBSTRING('SQL Tutorial', 1, 3) AS ExtractString; -- 1 to 3
+
 --LEFT.//Returns a specified number of characters from the left side of a string.
 
 SELECT LEFT('Hello World', 5) AS Result;
