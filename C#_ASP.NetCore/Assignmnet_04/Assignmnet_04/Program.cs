@@ -25,17 +25,14 @@ public class Employee
     }
 
     // Constructor to assign Id and Name property.
-    public Employee(int id, string name)
+    public Employee(int id, string name):this(id)
     {
-        Id = id;
         Name = name;
     }
 
     // Constructor to assign Id, Name and Salary property.
-    public Employee(int id, string name, int salary)
+    public Employee(int id, string name, int salary) : this(id,name)
     {
-        Id = id;
-        Name = name;
         Salary = salary;
     }
 

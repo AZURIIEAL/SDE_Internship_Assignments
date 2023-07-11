@@ -7,22 +7,18 @@ DROP TABLE Employee;
 
 INSERT INTO Employee (intern_id, intern_name, joiningdate)
 VALUES
-  (1, 'A', SYSDATETIMEOFFSET()),
-  (2, 'b', SYSDATETIMEOFFSET()),
-  (3, 'c', SYSDATETIMEOFFSET());
+  (1, 'A', GETUTCDATE()),
+  (2, 'b', GETUTCDATE()),
+  (3, 'c', GETUTCDATE());
 
 
   --4. Create an employee table with field “joiningdate” and display the joining date in two time zones - India and New York
-  SELECT * FROM Employee
-SELECT
-  intern_id,
-  intern_name,
-  joiningdate AS joiningdate_india,
-  SWITCHOFFSET(joiningdate, '+05:30') AS joiningdate_in_india, -- +5:30 in india  
-  SWITCHOFFSET(joiningdate, '-04:00') AS joiningdate_in_new_york  -- -4:00 in NY  
-FROM
-  Employee;
 
+  SELECT * FROM SYS.time_zone_info
+
+  SELECT *,joiningdate AT TIME ZONE 'India Standard Time' AS ConvertedDateTimeINDIA,
+  joiningdate AT TIME ZONE 'Eastern Standard Time' AS ConvertedDateTimeNewYork
+  FROM Employee;
 
   -- 6. For Employee table: Display the total no. of days each intern has joined
 
