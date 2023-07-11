@@ -1,0 +1,15 @@
+C:\AbinFiles\Assignments\SDE_Internship_Assignments\C#_ASP.NetCore\Assignmnet_04\Assignmnet_04\obj\Debug\net6.0\Assignmnet_04.csproj.AssemblyReference.cache
+C:\AbinFiles\Assignments\SDE_Internship_Assignments\C#_ASP.NetCore\Assignmnet_04\Assignmnet_04\obj\Debug\net6.0\Assignmnet_04.GeneratedMSBuildEditorConfig.editorconfig
+C:\AbinFiles\Assignments\SDE_Internship_Assignments\C#_ASP.NetCore\Assignmnet_04\Assignmnet_04\obj\Debug\net6.0\Assignmnet_04.AssemblyInfoInputs.cache
+C:\AbinFiles\Assignments\SDE_Internship_Assignments\C#_ASP.NetCore\Assignmnet_04\Assignmnet_04\obj\Debug\net6.0\Assignmnet_04.AssemblyInfo.cs
+C:\AbinFiles\Assignments\SDE_Internship_Assignments\C#_ASP.NetCore\Assignmnet_04\Assignmnet_04\obj\Debug\net6.0\Assignmnet_04.csproj.CoreCompileInputs.cache
+C:\AbinFiles\Assignments\SDE_Internship_Assignments\C#_ASP.NetCore\Assignmnet_04\Assignmnet_04\bin\Debug\net6.0\Assignmnet_04.exe
+C:\AbinFiles\Assignments\SDE_Internship_Assignments\C#_ASP.NetCore\Assignmnet_04\Assignmnet_04\bin\Debug\net6.0\Assignmnet_04.deps.json
+C:\AbinFiles\Assignments\SDE_Internship_Assignments\C#_ASP.NetCore\Assignmnet_04\Assignmnet_04\bin\Debug\net6.0\Assignmnet_04.runtimeconfig.json
+C:\AbinFiles\Assignments\SDE_Internship_Assignments\C#_ASP.NetCore\Assignmnet_04\Assignmnet_04\bin\Debug\net6.0\Assignmnet_04.dll
+C:\AbinFiles\Assignments\SDE_Internship_Assignments\C#_ASP.NetCore\Assignmnet_04\Assignmnet_04\bin\Debug\net6.0\Assignmnet_04.pdb
+C:\AbinFiles\Assignments\SDE_Internship_Assignments\C#_ASP.NetCore\Assignmnet_04\Assignmnet_04\obj\Debug\net6.0\Assignmnet_04.dll
+C:\AbinFiles\Assignments\SDE_Internship_Assignments\C#_ASP.NetCore\Assignmnet_04\Assignmnet_04\obj\Debug\net6.0\refint\Assignmnet_04.dll
+C:\AbinFiles\Assignments\SDE_Internship_Assignments\C#_ASP.NetCore\Assignmnet_04\Assignmnet_04\obj\Debug\net6.0\Assignmnet_04.pdb
+C:\AbinFiles\Assignments\SDE_Internship_Assignments\C#_ASP.NetCore\Assignmnet_04\Assignmnet_04\obj\Debug\net6.0\Assignmnet_04.genruntimeconfig.cache
+C:\AbinFiles\Assignments\SDE_Internship_Assignments\C#_ASP.NetCore\Assignmnet_04\Assignmnet_04\obj\Debug\net6.0\ref\Assignmnet_04.dll

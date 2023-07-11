@@ -44,10 +44,9 @@ WHERE [name] LIKE '%alex%' OR [name] LIKE'%deo%';
 
 
 --Finding % in a Coloumn 
--- We can find it by using Escape Chrachters[] 
 SELECT *
 FROM Employe
-WHERE [name] LIKE '[%' ESCAPE '[';
+WHERE [name] LIKE '%[%]%';
 
 
 --DUMMY DATA
