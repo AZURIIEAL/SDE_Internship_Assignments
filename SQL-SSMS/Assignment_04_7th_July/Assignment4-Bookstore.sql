@@ -7,10 +7,10 @@ USE BookStoreDB;
 
 -- Create a Table to hold the data
 CREATE TABLE BookDatatable (
-  BookID INT NOT NULL IDENTITY(1,1) PRIMARY KEY,  --IDENTITY is used (start,increment)
+  BookID INT NOT NULL IDENTITY(1,1) CONSTRAINT PK_BookDatatable PRIMARY KEY(BookID),  --IDENTITY is used (start,increment) Also addd primary key Constraint
   Title VARCHAR(100) NOT NULL,
   Author VARCHAR(100),
-  Price DECIMAL(5, 2) NOT NULL,
+  Price DECIMAL(5, 2) CONSTRAINT CHK_1 CHECK(Price>100) NOT NULL,  --Adding constraints Check(named)
   PublicationYear SMALLINT,
   BookSeller VARCHAR(100),
   BookInStock INT NOT NULL,
@@ -18,7 +18,8 @@ CREATE TABLE BookDatatable (
   [Language] VARCHAR(50),
   RatingIn5 TINYINT,
   CreatedOn DATE DEFAULT GETDATE(),
-  CreatedOnDATETIME DATETIME DEFAULT GETDATE()
+  CreatedOnDATETIME DATETIME DEFAULT GETDATE(),
+  --CONSTRAINt FK_booktable FOREIGN KEY (ID) REFERENCES 
 );
 DROP TABLE BookDatatable
 
