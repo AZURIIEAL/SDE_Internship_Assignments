@@ -1,3 +1,7 @@
+
+--ASSIGNMENT:07
+--10 Queries from the AdventureWorksLT2019 Db
+-->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 --1.Show the CompanyName for James D. Kramer
 SELECT CompanyName FROM SalesLT.Customer WHERE FirstName ='James'AND MiddleName='D.' AND LastName='Kramer';
 
@@ -27,8 +31,10 @@ ON CA.CustomerID = C.CustomerID
 WHERE A.City='Dallas';
 
 --6.How many items with ListPrice more than $1000 have been sold
+--By Nesting:
 SELECT DISTINCT COUNT(*) AS NumberOfItems FROM SalesLT.SalesOrderDetail WHERE ProductID IN (SELECT ProductID FROM SalesLT.Product WHERE ListPrice > 1000 )
---We can also do it by joining
+
+--We can also do it by joining:
 SELECT COUNT(*) AS NumberOfItems
 FROM SalesLT.SalesOrderDetail sod
 INNER JOIN SalesLT.Product p ON
@@ -45,6 +51,7 @@ c.CustomerID = soh.CustomerID
 WHERE soh.SubTotal + soh.TaxAmt + soh.Freight > 100000;
 
 --8.Find the number of left racing socks ('Racing Socks, L') ordered by CompanyName 'Riding Cycles'
+--From Tables SalesLT.Customer,SalesLT.SalesOrderHeader,SalesOrderDetail,SalesLT.Product
 SELECT SUM(OrderQty) AS TotalLeftRacingSocks
 FROM SalesLT.Customer c
 INNER JOIN SalesLT.SalesOrderHeader soh ON
@@ -61,11 +68,11 @@ SELECT soh.SalesOrderID, sod.UnitPrice
 FROM SalesLT.SalesOrderHeader soh
 INNER JOIN SalesLT.SalesOrderDetail sod ON
 soh.SalesOrderID = sod.SalesOrderID
-GROUP BY soh.SalesOrderID, sod.UnitPrice
-HAVING COUNT(*) = 1;
+GROUP BY soh.SalesOrderID, sod.UnitPrice HAVING COUNT(*) = 1;
 
 
 --10.Show the product description for culture ‘fr’ for product with ProductID 736.
+--From tables SalesLT.ProductDescription,SalesLT.ProductModelProductDescription,SalesLT.ProductModel,SalesLT.Product
 SELECT pd.Description
 FROM SalesLT.ProductDescription pd
 INNER JOIN SalesLT.ProductModelProductDescription pmpd ON
