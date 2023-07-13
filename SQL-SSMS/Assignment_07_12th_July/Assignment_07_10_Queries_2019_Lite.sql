@@ -1,4 +1,3 @@
-
 --ASSIGNMENT:07
 --10 Queries from the AdventureWorksLT2019 Db
 -->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -32,15 +31,17 @@ WHERE A.City='Dallas';
 
 --6.How many items with ListPrice more than $1000 have been sold
 --By Nesting:
-SELECT DISTINCT COUNT(*) AS NumberOfItems FROM SalesLT.SalesOrderDetail WHERE ProductID IN (SELECT ProductID FROM SalesLT.Product WHERE ListPrice > 1000 )
-
---We can also do it by joining:
-SELECT COUNT(*) AS NumberOfItems
-FROM SalesLT.SalesOrderDetail sod
-INNER JOIN SalesLT.Product p ON
-sod.ProductID = p.ProductID
-WHERE p.ListPrice > 1000;
-
+SELECT COUNT(*) AS TotalCount
+FROM
+(
+  SELECT ProductID
+  FROM SalesLT.SalesOrderDetail
+  GROUP BY ProductID
+  HAVING ProductID IN
+    (SELECT ProductID
+     FROM SalesLT.Product
+     WHERE ListPrice > 1000)
+)as t --DerivedRuntime table
 
 --7.Give the CompanyName of those customers with orders over $100000. Include the subtotal plus tax plus freight.
 --From Tables SalesLT.SalesOrderHeader and SalesLT.CustomerID
@@ -64,12 +65,9 @@ WHERE c.CompanyName = 'Riding Cycles'
   AND p.Name = 'Racing Socks, L'
 
 --9.“Single Item Order” is a customer order where only one item is ordered. Show the SalesOrderID and the UnitPrice for every Single Item Order.         
-SELECT soh.SalesOrderID, sod.UnitPrice
-FROM SalesLT.SalesOrderHeader soh
-INNER JOIN SalesLT.SalesOrderDetail sod ON
-soh.SalesOrderID = sod.SalesOrderID
-GROUP BY soh.SalesOrderID, sod.UnitPrice HAVING COUNT(*) = 1;
-
+SELECT SalesOrderID,UnitPrice FROM SalesLT.SalesOrderDetail WHERE SalesOrderID IN (
+SELECT SalesOrderID FROM SalesLT.SalesOrderDetail
+GROUP BY SalesOrderID HAVING COUNT(*) = 1);
 
 --10.Show the product description for culture ‘fr’ for product with ProductID 736.
 --From tables SalesLT.ProductDescription,SalesLT.ProductModelProductDescription,SalesLT.ProductModel,SalesLT.Product
