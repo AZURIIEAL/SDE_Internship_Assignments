@@ -81,5 +81,3 @@ INNER JOIN SalesLT.Product p ON
 pm.ProductModelID = p.ProductModelID
 WHERE pmpd.Culture = 'fr'
   AND p.ProductID = 736;
-
-
