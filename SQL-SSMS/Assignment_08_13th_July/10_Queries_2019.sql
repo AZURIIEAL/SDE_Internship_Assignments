@@ -32,7 +32,7 @@ select * from SalesLT.Product
 --__________________________Evening___________13 th JULY 2023________________________________________________________________________________________
 
 --1.Use the SubTotal value in SaleOrderHeader to list orders from the largest to the smallest. For each order show the CompanyName and the SubTotal and the total weight of the order.
-SELECT A.CompanyName, B.SubTotal, SUM( D.Weight * C.OrderQty)
+SELECT A.CompanyName, B.SubTotal, SUM( D.Weight * C.OrderQty) AS TotalWeight
 FROM SalesLT.Customer A
 INNER JOIN SalesLT.SalesOrderHeader B
 	ON A.CustomerID = B.CustomerID
@@ -44,14 +44,21 @@ GROUP BY A.CompanyName, B.SubTotal
 ORDER BY B.SubTotal DESC
 
 --2. How many products in ProductCategory ‘Cranksets’ have been sold to an address in ‘London’
-SELECT * From SalesLT.ProductCategory WHERE Name='Cranksets'
-
-SELECT *
-FROM ( 
 SELECT * FROM SalesLT.ProductCategory pc
-INNER JOIN SalesLT.Product sp ON pc.ProductCategoryID = sp.ProductCategoryID
-INNER JOIN SalesLT.SalesOrderDetail sod ON sp.ProductID = sod.ProductID
-INNER JOIN SalesLT.SalesOrderHeader soh ON pc.ProductCategoryID = sp.ProductCategoryID
-INNER JOIN SalesLT.Product sp ON pc.ProductCategoryID = sp.ProductCategoryID
-)t
+INNER JOIN SalesLT.Product sp 
+	ON pc.ProductCategoryID = sp.ProductCategoryID
+INNER JOIN SalesLT.SalesOrderDetail sod 
+	ON sp.ProductID = sod.ProductID
+INNER JOIN SalesLT.SalesOrderHeader soh 
+	ON sod.SalesOrderID= soh.SalesOrderID 
+INNER JOIN SalesLT.Customer C 
+	ON soh.CustomerID = C.CustomerID
+INNER JOIN SalesLT.CustomerAddress CA 
+	ON C.CustomerID = CA.CustomerID
+INNER JOIN SalesLT.[Address] A 
+	ON CA.AddressID = A.AddressID
+WHERE pc.Name='Cranksets' AND City='London'
+
+
+
 
