@@ -169,18 +169,18 @@ INNER JOIN SalesLT.Product P ON
 	GROUP BY A.City
 	ORDER BY Profit DESC;
 
--- Cities that haven't placed any orders
+-- c) Cities that haven't placed any orders
 
 SELECT
     A.City
 FROM
     SalesLT.Address AS A
 LEFT JOIN
-    SalesLT.SalesOrderHeader AS O 
-	ON O.ShipToAddressID = A.AddressID
+    SalesLT.SalesOrderHeader AS SOH 
+	ON SOH.ShipToAddressID = A.AddressID
 WHERE
-    O.SalesOrderID IS NULL      
-
+    SOH.SalesOrderID IS NULL
+GROUP BY A.City
 
 
        
