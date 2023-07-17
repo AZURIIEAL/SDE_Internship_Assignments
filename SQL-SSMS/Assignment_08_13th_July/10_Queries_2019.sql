@@ -140,7 +140,7 @@ ORDER BY
 
 
 --  a) most no of order
-SELECT TOP 1 --As we need the most number of orders (hence top1)
+SELECT --As we need the most number of orders  
     A.City,
     COUNT(O.SalesOrderID) AS OrderCount
 FROM
@@ -157,7 +157,7 @@ ORDER BY
 
 --b) most profitable city 
 
-SELECT A.City, SUM(SOD.OrderQty * (P.ListPrice - P.StandardCost)) AS Profit
+SELECT TOP 1 A.City, SUM(SOD.OrderQty * (P.ListPrice - P.StandardCost)) AS Profit
 FROM SalesLT.SalesOrderDetail SOD
 INNER JOIN SalesLT.SalesOrderHeader SOH ON
 	SOD.SalesOrderID = SOH.SalesOrderID

@@ -1,59 +1,59 @@
-﻿//creating an abstract class.
+﻿//Create an abstract class Shape with name shape and a method called 'NoOfSides' on int
+
 public abstract class Shape
 {
-    //decalare the properties
-    public string Name { get; set; }
-    public string Type { get; set; }
+    //Declare abstract properties
     public int NoOfSides { get; set; }
 
-    //Create a ctor
+    //Declare the ctor
     public Shape(int noOfSides)
     {
         NoOfSides = noOfSides;
     }
-
-    //A function to display the number of sides.
+    //Declare the void function/method
     public void DisplayNoOfSides()
     {
-        Console.WriteLine("Number of Sides: " + NoOfSides);
+        Console.WriteLine("\nNumber of Sides: " + NoOfSides);
     }
-
-    //Abstract method 
+    //Declare the Abstract method.
     public abstract double CalculateArea();
-}
 
-public class Triangle : Shape //inheriting the abstract class.
+}
+//Create the next class called Triangle and make it inherit 
+public class Triangle : Shape
 {
+    //declaring the props.
     public int SideLength1 { get; set; }
     public int SideLength2 { get; set; }
-    public int SideLength3 { get; set; }
-
-    public Triangle(int noOfSides, int sideLength1, int sideLength2, int sideLength3): base(noOfSides)
+    public int SideLength3 { get; set;}
+    //Setting up the ctor for the inherited class
+    public Triangle(int noOfSides, int sideLength1, int sideLength2, int sideLength3) : base(noOfSides)
     {
         SideLength1 = sideLength1;
         SideLength2 = sideLength2;
         SideLength3 = sideLength3;
     }
 
-    public override double CalculateArea()
+    public override double CalculateArea() //Overriding Calculate area method.
     {
         // Using Heron's formula to calculate the area of a triangle
-        double semiPerimeter = (SideLength1 + SideLength2 + SideLength3) / 2.0;
+        double semiPerimeter = (SideLength1 + SideLength2 + SideLength3) / 2;
         double area = Math.Sqrt(semiPerimeter * (semiPerimeter - SideLength1) * (semiPerimeter - SideLength2) * (semiPerimeter - SideLength3));
-        return area;
+        return Math.Round(area, 2);
     }
 }
-
 public class Square : Shape //inheriting the abstract class.
 {
+    //Setting the props,we only need one cause its a square.
     public int Length { get; set; }
 
-    public Square(int noOfSides, int length)
-        : base(noOfSides)
+    //declaring the ctor
+    public Square(int noOfSides, int length): base(noOfSides)
     {
         Length = length;
     }
 
+    //abstract method by overriding
     public override double CalculateArea()
     {
         return Length * Length;
@@ -62,16 +62,19 @@ public class Square : Shape //inheriting the abstract class.
 
 public class Rectangle : Shape //inheriting the abstract class.
 {
+    //declaring the props
     public int Length { get; set; }
     public int Breadth { get; set; }
 
-    public Rectangle(int noOfSides, int length, int breadth)
-        : base(noOfSides)
+
+    //Declaring the ctor
+    public Rectangle(int noOfSides, int length, int breadth): base(noOfSides)
     {
         Length = length;
         Breadth = breadth;
     }
 
+    //overrride
     public override double CalculateArea()
     {
         return Length * Breadth;
@@ -83,21 +86,17 @@ public class Program //Driver class
     public static void Main(string[] args) //svm
     {
         Triangle triangle = new Triangle(3, 5, 6, 7);
-        triangle.Name = "Triangle";
-        triangle.Type = "Polygon";
         triangle.DisplayNoOfSides();
-        Console.WriteLine("Area: " + triangle.CalculateArea());
+        Console.WriteLine("The Area Of Triangle is: " + triangle.CalculateArea());
 
         Square square = new Square(4, 5);
-        square.Name = "Square";
-        square.Type = "Polygon";
         square.DisplayNoOfSides();
-        Console.WriteLine("Area: " + square.CalculateArea());
+        Console.WriteLine("The Area Of Square is: " + square.CalculateArea());
 
         Rectangle rectangle = new Rectangle(4, 6, 8);
-        rectangle.Name = "Rectangle";
-        rectangle.Type = "Polygon";
         rectangle.DisplayNoOfSides();
-        Console.WriteLine("Area: " + rectangle.CalculateArea());
+        Console.WriteLine("The Area Of rectangle is: " + rectangle.CalculateArea());
     }
 }
+
+
