@@ -1,0 +1,15 @@
+C:\AbinFiles\Assignments\SDE_Internship_Assignments\C#_ASP.NetCore\Assignment_06_14th_July\ShapeCalculation\bin\Debug\net6.0\ShapeCalculation.exe
+C:\AbinFiles\Assignments\SDE_Internship_Assignments\C#_ASP.NetCore\Assignment_06_14th_July\ShapeCalculation\bin\Debug\net6.0\ShapeCalculation.deps.json
+C:\AbinFiles\Assignments\SDE_Internship_Assignments\C#_ASP.NetCore\Assignment_06_14th_July\ShapeCalculation\bin\Debug\net6.0\ShapeCalculation.runtimeconfig.json
+C:\AbinFiles\Assignments\SDE_Internship_Assignments\C#_ASP.NetCore\Assignment_06_14th_July\ShapeCalculation\bin\Debug\net6.0\ShapeCalculation.dll
+C:\AbinFiles\Assignments\SDE_Internship_Assignments\C#_ASP.NetCore\Assignment_06_14th_July\ShapeCalculation\bin\Debug\net6.0\ShapeCalculation.pdb
+C:\AbinFiles\Assignments\SDE_Internship_Assignments\C#_ASP.NetCore\Assignment_06_14th_July\ShapeCalculation\obj\Debug\net6.0\ShapeCalculation.csproj.AssemblyReference.cache
+C:\AbinFiles\Assignments\SDE_Internship_Assignments\C#_ASP.NetCore\Assignment_06_14th_July\ShapeCalculation\obj\Debug\net6.0\ShapeCalculation.GeneratedMSBuildEditorConfig.editorconfig
+C:\AbinFiles\Assignments\SDE_Internship_Assignments\C#_ASP.NetCore\Assignment_06_14th_July\ShapeCalculation\obj\Debug\net6.0\ShapeCalculation.AssemblyInfoInputs.cache
+C:\AbinFiles\Assignments\SDE_Internship_Assignments\C#_ASP.NetCore\Assignment_06_14th_July\ShapeCalculation\obj\Debug\net6.0\ShapeCalculation.AssemblyInfo.cs
+C:\AbinFiles\Assignments\SDE_Internship_Assignments\C#_ASP.NetCore\Assignment_06_14th_July\ShapeCalculation\obj\Debug\net6.0\ShapeCalculation.csproj.CoreCompileInputs.cache
+C:\AbinFiles\Assignments\SDE_Internship_Assignments\C#_ASP.NetCore\Assignment_06_14th_July\ShapeCalculation\obj\Debug\net6.0\ShapeCalculation.dll
+C:\AbinFiles\Assignments\SDE_Internship_Assignments\C#_ASP.NetCore\Assignment_06_14th_July\ShapeCalculation\obj\Debug\net6.0\refint\ShapeCalculation.dll
+C:\AbinFiles\Assignments\SDE_Internship_Assignments\C#_ASP.NetCore\Assignment_06_14th_July\ShapeCalculation\obj\Debug\net6.0\ShapeCalculation.pdb
+C:\AbinFiles\Assignments\SDE_Internship_Assignments\C#_ASP.NetCore\Assignment_06_14th_July\ShapeCalculation\obj\Debug\net6.0\ShapeCalculation.genruntimeconfig.cache
+C:\AbinFiles\Assignments\SDE_Internship_Assignments\C#_ASP.NetCore\Assignment_06_14th_July\ShapeCalculation\obj\Debug\net6.0\ref\ShapeCalculation.dll

@@ -71,30 +71,23 @@ FROM
     SalesLT.Customer AS C
     INNER JOIN SalesLT.CustomerAddress AS CA_MO 
 	ON C.CustomerID = CA_MO.CustomerID
+	--joining customer addres and customer and address,to het a hold of address id , customer id and address type.
     INNER JOIN SalesLT.Address AS MO
 	ON CA_MO.AddressID = MO.AddressID
 
+	--Now we need to left join it(we are actually filter cutting it and then joing the whole table after filtering)
     LEFT JOIN SalesLT.CustomerAddress AS CA_SA 
 	ON C.CustomerID = CA_SA.CustomerID AND CA_SA.AddressType = 'Shipping'
+	--now we will join the whole filtered table.
     LEFT JOIN SalesLT.Address AS SA 
 	ON CA_SA.AddressID = SA.AddressID
 WHERE 
+-- Till here  we will get everything like no seperation in between so we need another where
+--Addimg a where for applying the dallas and main office filter
     MO.City = 'Dallas' AND CA_MO.AddressType = 'Main Office';
 
 
 	--.....................................................................
-
-
-
-SELECT * FROM 
-    SalesLT.Customer AS C
-    INNER JOIN SalesLT.CustomerAddress AS CA_MO ON C.CustomerID = CA_MO.CustomerID
-    INNER JOIN SalesLT.Address AS MO ON CA_MO.AddressID = MO.AddressID
-	WHERE 
-    MO.City = 'Dallas'
-    LEFT JOIN SalesLT.CustomerAddress AS CA_SA ON C.CustomerID = CA_SA.CustomerID AND CA_SA.AddressType = 'Shipping'
-
-
 /*
 4.For each order show the SalesOrderID and SubTotal calculated  in three ways: 
    A) From the SalesOrderHeader  (Order header table)
@@ -103,9 +96,6 @@ SELECT * FROM
 */
 
 
-SELECT * FROM SalesLT.SalesOrderHeader
-SELECT * FROM SalesLT.SalesOrderDetail
-SELECT * FROM SalesLT.Product
 
 
 
@@ -122,8 +112,61 @@ GROUP BY SalesOrderID
 )as t2 on t.SalesOrderID = t2.SalesOrderID
 
 
+--5.Show the best selling item by value.
+SELECT TOP 1 P.[Name],P.[ProductID], --Selcting the top 1
+SUM(SOD.OrderQty*(P.ListPrice-P.StandardCost)) --qty times the difference between the list price and standard cost ie profit.
+AS [Profit] --name the coloumn as profit
+FROM SalesLT.Product AS P
+INNER JOIN SalesLT.SalesOrderDetail AS SOD
+ON SOD.ProductID= P.ProductID
+GROUP BY P.ProductID,P.[Name]
+ORDER BY [Profit] DESC; --we need the biggest profit in top
+
+/*6.From which city 
+    a) most no of order
+    b) most profitable city 
+    c) which hasn't placed any orders*/
+
+
+--  a) most no of order
+SELECT TOP 1 --As we need the most number of orders (hence top1)
+    A.City,
+    COUNT(O.SalesOrderID) AS OrderCount
+FROM
+    SalesLT.SalesOrderHeader AS O
+    INNER JOIN SalesLT.Address AS A
+	ON O.ShipToAddressID = A.AddressID --map the address id to shipping id
+GROUP BY
+    A.City --Group by city and then order it in descending way and then selecct the top 1
+ORDER BY
+    OrderCount DESC;--The biggest value
 
 
 
+
+--b) most profitable city 
+SELECT TOP 1
+    A.City,
+    SUM(O.SubTotal + O.TaxAmt + O.Freight) AS TotalProfit
+FROM
+    SalesLT.SalesOrderHeader AS O
+    JOIN SalesLT.Address AS A 
+	ON O.ShipToAddressID = A.AddressID
+GROUP BY
+    A.City
+ORDER BY
+    TotalProfit DESC;
+
+-- Cities that haven't placed any orders
+
+SELECT
+    A.City
+FROM
+    SalesLT.Address AS A
+LEFT JOIN
+    SalesLT.SalesOrderHeader AS O 
+	ON O.ShipToAddressID = A.AddressID
+WHERE
+    O.SalesOrderID IS NULL;
 
 
