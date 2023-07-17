@@ -85,15 +85,15 @@ public class Program //Driver class
 {
     public static void Main(string[] args) //svm
     {
-        Triangle triangle = new Triangle(3, 5, 6, 7);
+        Shape triangle = new Triangle(3, 5, 6, 7);
         triangle.DisplayNoOfSides();
         Console.WriteLine("The Area Of Triangle is: " + triangle.CalculateArea());
 
-        Square square = new Square(4, 5);
+        Shape square = new Square(4, 5);
         square.DisplayNoOfSides();
         Console.WriteLine("The Area Of Square is: " + square.CalculateArea());
 
-        Rectangle rectangle = new Rectangle(4, 6, 8);
+        Shape rectangle = new Rectangle(4, 6, 8);
         rectangle.DisplayNoOfSides();
         Console.WriteLine("The Area Of rectangle is: " + rectangle.CalculateArea());
     }
