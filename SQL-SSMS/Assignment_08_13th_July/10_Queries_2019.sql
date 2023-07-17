@@ -27,7 +27,11 @@ FROM(
 GROUP BY ExtractString 
 ORDER BY (AvgStdCost) DESC;
 
-select * from SalesLT.Product
+--Corrected
+SELECT SUBSTRING(ProductNumber, 1, 2) AS ExtractString,AVG(ListPrice) AvgListPrice,MAX(ListPrice) MaxListPrice,MIN(ListPrice) MinListPrice,AVG(StandardCost) AvgStdCost
+FROM SalesLT.Product
+GROUP BY SUBSTRING(ProductNumber, 1, 2)
+ORDER BY AVG(StandardCost) DESC;
 
 --__________________________Evening___________13 th JULY 2023________________________________________________________________________________________
 
@@ -102,25 +106,32 @@ WHERE
 SELECT a.SalesOrderID,SubTotal,t2.SubTotal2,t1.SubTotal_3 FROM SalesLT.SalesOrderHeader as a
 INNER JOIN (SELECT SalesOrderID,SUM(UnitPrice*OrderQty) SubTotal_2 FROM SalesLT.SalesOrderDetail
 GROUP BY SalesOrderID)as t
-on a.SalesOrderID = t.SalesOrderID --
+ON a.SalesOrderID = t.SalesOrderID --
 INNER JOIN (SELECT SalesOrderID,SUM(ListPrice*OrderQty) SubTotal_3 FROM SalesLT.Product sp
-INNER JOIN SalesLT.SalesOrderDetail sod ON sod.ProductID = sp.ProductID
+INNER JOIN SalesLT.SalesOrderDetail sod 
+ON sod.ProductID = sp.ProductID
 GROUP BY SalesOrderID) as t1 
-on t.SalesOrderID = t1.SalesOrderID --
+ON t.SalesOrderID = t1.SalesOrderID --
 INNER JOIN (SELECT SalesOrderID,SUM(UnitPrice*OrderQty) SubTotal2 FROM SalesLT.SalesOrderDetail
 GROUP BY SalesOrderID
-)as t2 on t.SalesOrderID = t2.SalesOrderID
+)as t2 ON t.SalesOrderID = t2.SalesOrderID
 
 
 --5.Show the best selling item by value.
-SELECT TOP 1 P.[Name],P.[ProductID], --Selcting the top 1
-SUM(SOD.OrderQty*(P.ListPrice-P.StandardCost)) --qty times the difference between the list price and standard cost ie profit.
-AS [Profit] --name the coloumn as profit
-FROM SalesLT.Product AS P
-INNER JOIN SalesLT.SalesOrderDetail AS SOD
-ON SOD.ProductID= P.ProductID
-GROUP BY P.ProductID,P.[Name]
-ORDER BY [Profit] DESC; --we need the biggest profit in top
+
+SELECT TOP 1
+    P.Name AS BestSellingItem,
+    SUM(SOD.OrderQty*(P.ListPrice-P.StandardCost)) AS BestValue
+
+FROM
+    SalesLT.SalesOrderDetail AS SOD
+    INNER JOIN SalesLT. Product AS P ON
+	SOD.ProductID = P.ProductID
+GROUP BY
+    P.Name
+ORDER BY
+    BestValue DESC;
+
 
 /*6.From which city 
     a) most no of order
@@ -145,17 +156,18 @@ ORDER BY
 
 
 --b) most profitable city 
-SELECT TOP 1
-    A.City,
-    SUM(O.SubTotal + O.TaxAmt + O.Freight) AS TotalProfit
-FROM
-    SalesLT.SalesOrderHeader AS O
-    JOIN SalesLT.Address AS A 
-	ON O.ShipToAddressID = A.AddressID
-GROUP BY
-    A.City
-ORDER BY
-    TotalProfit DESC;
+
+SELECT A.City, SUM(SOD.OrderQty * (P.ListPrice - P.StandardCost)) AS Profit
+FROM SalesLT.SalesOrderDetail SOD
+INNER JOIN SalesLT.SalesOrderHeader SOH ON
+	SOD.SalesOrderID = SOH.SalesOrderID
+INNER JOIN SalesLT.Address A ON
+	SOH.ShipToAddressID = A.AddressID
+INNER JOIN SalesLT.Product P ON
+	SOD.ProductID = P.ProductID
+
+	GROUP BY A.City
+	ORDER BY Profit DESC;
 
 -- Cities that haven't placed any orders
 
@@ -167,6 +179,8 @@ LEFT JOIN
     SalesLT.SalesOrderHeader AS O 
 	ON O.ShipToAddressID = A.AddressID
 WHERE
-    O.SalesOrderID IS NULL;
+    O.SalesOrderID IS NULL      
 
 
+
+       

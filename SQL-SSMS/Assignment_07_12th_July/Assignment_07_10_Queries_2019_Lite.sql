@@ -9,6 +9,14 @@ SELECT AddressLine1,AddressLine2,City,StateProvince,CountryRegion,PostalCode FRO
 WHERE AddressID IN (SELECT AddressID FROM SalesLT.CustomerAddress WHERE
 CustomerID IN(SELECT CustomerID FROM SalesLT.Customer WHERE CompanyName='Modular Cycle Systems'));
 
+--Corrected
+SELECT A.AddressLine1, A.AddressLine2, A.City, A.StateProvince, A.CountryRegion, A.PostalCode
+FROM SalesLT.Address A
+INNER JOIN SalesLT.CustomerAddress CA ON A.AddressID = CA.AddressID
+INNER JOIN SalesLT.Customer C ON CA.CustomerID = C.CustomerID
+WHERE C.CompanyName = 'Modular Cycle Systems';
+
+
 --3.Show OrdeQty, the Name and the ListPrice of the order made by CustomerID 635
 SELECT Name,ListPrice,OrderQty 
 FROM SalesLT.Product as sp
@@ -19,7 +27,13 @@ ON soh.SalesOrderID=sod.SalesOrderID
 WHERE soh.CustomerID = 30025 OR soh.CustomerID = 635; --No customerID 635 did order
 
 --4.Show the first name and the email address of customer with CompanyName 'Bike World'
-SELECT DISTINCT FirstName,EmailAddress FROM SalesLT.Customer WHERE CompanyName = 'Bike World';
+SELECT FirstName,EmailAddress FROM SalesLT.Customer WHERE CompanyName = 'Bike World';
+ --Changed.
+SELECT FirstName, EmailAddress
+FROM SalesLT.Customer
+WHERE CompanyName = 'Bike World'
+GROUP BY FirstName, EmailAddress;
+
 
 --5.Show the CompanyName for all customers with an address in City 'Dallas'.
 SELECT DISTINCT CompanyName FROM SalesLT.Address AS A
@@ -49,7 +63,8 @@ SELECT CompanyName
 FROM SalesLT.Customer c
 INNER JOIN SalesLT.SalesOrderHeader soh ON
 c.CustomerID = soh.CustomerID
-WHERE soh.SubTotal + soh.TaxAmt + soh.Freight > 100000;
+WHERE soh.SubTotal + soh.TaxAmt + soh.Freight > 100000
+GROUP BY CompanyName -- Changed
 
 --8.Find the number of left racing socks ('Racing Socks, L') ordered by CompanyName 'Riding Cycles'
 --From Tables SalesLT.Customer,SalesLT.SalesOrderHeader,SalesOrderDetail,SalesLT.Product
