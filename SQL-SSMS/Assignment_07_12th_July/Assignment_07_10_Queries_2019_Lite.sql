@@ -54,8 +54,7 @@ FROM
   HAVING ProductID IN
     (SELECT ProductID
      FROM SalesLT.Product
-     WHERE ListPrice > 1000)
-)as t --DerivedRuntime table
+     WHERE ListPrice > 1000))as t --DerivedRuntime table
 
 --7.Give the CompanyName of those customers with orders over $100000. Include the subtotal plus tax plus freight.
 --From Tables SalesLT.SalesOrderHeader and SalesLT.CustomerID
