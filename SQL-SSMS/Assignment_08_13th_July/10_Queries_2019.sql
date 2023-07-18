@@ -48,20 +48,26 @@ GROUP BY A.CompanyName, B.SubTotal
 ORDER BY B.SubTotal DESC
 
 --2. How many products in ProductCategory ‘Cranksets’ have been sold to an address in ‘London’
-SELECT COUNT(*) FROM SalesLT.ProductCategory pc
+
+
+--Chamged added Distinct
+SELECT COUNT(DISTINCT sp.ProductID) AS NumberOfProductsSold
+FROM SalesLT.ProductCategory pc
 INNER JOIN SalesLT.Product sp 
-	ON pc.ProductCategoryID = sp.ProductCategoryID
+ON pc.ProductCategoryID = sp.ProductCategoryID
 INNER JOIN SalesLT.SalesOrderDetail sod 
-	ON sp.ProductID = sod.ProductID
+ON sp.ProductID = sod.ProductID
 INNER JOIN SalesLT.SalesOrderHeader soh 
-	ON sod.SalesOrderID= soh.SalesOrderID 
+ON sod.SalesOrderID = soh.SalesOrderID
 INNER JOIN SalesLT.Customer C 
-	ON soh.CustomerID = C.CustomerID
+ON soh.CustomerID = C.CustomerID
 INNER JOIN SalesLT.CustomerAddress CA 
-	ON C.CustomerID = CA.CustomerID
+ON C.CustomerID = CA.CustomerID
 INNER JOIN SalesLT.[Address] A 
-	ON CA.AddressID = A.AddressID
-WHERE pc.Name='Cranksets' AND City='London'
+ON CA.AddressID = A.AddressID
+WHERE pc.Name='Cranksets' AND City='London';
+
+
 
 /*3.For every customer with a ‘Main Office’ in Dallas show AddressLine1 of the ‘Main Office’ and AddressLine1 of the ‘Shipping’ address
 - if there is no shipping address leave it blank. Use one row per customer.*/
@@ -99,10 +105,6 @@ WHERE
    C) Sum of OrderQtyListPrice (Product table)
 */
 
-
-
-
-
 SELECT a.SalesOrderID,SubTotal,t2.SubTotal2,t1.SubTotal_3 FROM SalesLT.SalesOrderHeader as a
 INNER JOIN (SELECT SalesOrderID,SUM(UnitPrice*OrderQty) SubTotal_2 FROM SalesLT.SalesOrderDetail
 GROUP BY SalesOrderID)as t
@@ -115,6 +117,21 @@ ON t.SalesOrderID = t1.SalesOrderID --
 INNER JOIN (SELECT SalesOrderID,SUM(UnitPrice*OrderQty) SubTotal2 FROM SalesLT.SalesOrderDetail
 GROUP BY SalesOrderID
 )as t2 ON t.SalesOrderID = t2.SalesOrderID
+
+
+--Correction:
+SELECT SalesOrderID,SubTotal,'SubTotal_1' [From Where] FROM SalesLT.SalesOrderHeader
+
+UNION ALL
+
+SELECT SalesOrderID,SUM(UnitPrice*OrderQty) SubTotal_2,'SubTotal_2' [From Where] FROM SalesLT.SalesOrderDetail
+GROUP BY SalesOrderID
+
+UNION ALL
+
+SELECT a.SalesOrderID,SubTotal_3,'SubTotal_3' [From Where] FROM SalesLT.SalesOrderHeader as a
+INNER JOIN (SELECT SalesOrderID,SUM(UnitPrice*OrderQty) SubTotal_3 FROM SalesLT.SalesOrderDetail GROUP BY SalesOrderID)t
+ON a.SalesOrderID = t.SalesOrderID
 
 
 --5.Show the best selling item by value.
