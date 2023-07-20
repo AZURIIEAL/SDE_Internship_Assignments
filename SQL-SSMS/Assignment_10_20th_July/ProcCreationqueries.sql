@@ -12,15 +12,9 @@ BEGIN
     VALUES (@Username, @Email, @Password, @Address);
 END;
 
--- Example usage of the InsertUser stored procedure
-EXEC InsertUser
-    @Username = 'john_doe',
-    @Email = 'john.doe@example.com',
-    @Password = 'password123',
-    @Address = '123 Main St';
 
 
-	-- Create the stored procedure to insert data into the Movie table
+-- Create the stored procedure to insert data into the Movie table
 CREATE PROCEDURE InsertMovie
     @Title VARCHAR(100),
     @Certification INT,
@@ -38,14 +32,3 @@ BEGIN
 END;
 
 
--- Example usage of the InsertMovie stored procedure
-EXEC InsertMovie
-    @Title = 'Avengers: Endgame',
-    @Certification = 12,
-    @ReleaseDate = '2019-04-26',
-    @Duration = 181,
-    @PosterLink = 'http://poster.in',
-    @TrailerLink = 'http://trailer.com',
-    @GenreId = 1,
-    @LanguageId = 1,
-    @DirectorId = 1;
