@@ -22,13 +22,11 @@ CREATE PROCEDURE InsertMovie
     @Duration INT,
     @PosterLink VARCHAR(200),
     @TrailerLink VARCHAR(200),
-    @GenreId INT,
-    @LanguageId INT,
-    @DirectorId INT
+	@Description TEXT
 AS
 BEGIN
-    INSERT INTO MovieMate.Movie (Title, Certification, ReleaseDate, Duration, PosterLink, TrailerLink, GenreId, LanguageId, DirectorId)
-    VALUES (@Title, @Certification, @ReleaseDate, @Duration, @PosterLink, @TrailerLink, @GenreId, @LanguageId, @DirectorId);
+    INSERT INTO MovieMate.Movie (Title, Certification, ReleaseDate, Duration, PosterLink, TrailerLink,[Description])
+    VALUES (@Title, @Certification, @ReleaseDate, @Duration, @PosterLink, @TrailerLink,@Description);
 END;
 
 
