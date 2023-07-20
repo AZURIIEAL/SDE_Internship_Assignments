@@ -5,14 +5,6 @@ USE MovieMate;
 -- Create the schema MovieMate
 CREATE SCHEMA MovieMate;
 
- -- Create the MovieMate database
-CREATE DATABASE MovieMate;
-USE MovieMate;
-
--- Create the schema MovieMate
-CREATE SCHEMA MovieMate;
-
-
 -- Language table
 CREATE TABLE MovieMate.[Language] (
     LanguageId INT IDENTITY(1,1) CONSTRAINT PK_Language_LanguageId  PRIMARY KEY ,
