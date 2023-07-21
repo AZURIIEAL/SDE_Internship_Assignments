@@ -18,3 +18,8 @@ EXEC InsertMovie
     @PosterLink = 'http://poster.in',
     @TrailerLink = 'http://trailer.com',
 	@Description = 'good comedy'
+
+	SELECT * FROM MovieMate.[User]
+	SELECT * FROM MovieMate.Movie
+
+	DELETE  FROM MovieMate.[User];

@@ -1,4 +1,72 @@
---Proc Creation queries.
+--Proc Creation queries
+
+--Create the stored procedure to insert data into the Language  table
+CREATE PROCEDURE AddLanguage 
+    @Language VARCHAR(50)
+AS
+BEGIN
+    INSERT INTO MovieMate.[Language] ([Language])
+    VALUES (@Language);
+END;
+
+GO 
+
+--Create the stored procedure to insert data into the Certification  table
+CREATE PROCEDURE AddCertification
+    @Certification VARCHAR(50)
+AS
+BEGIN
+    INSERT INTO MovieMate.[Certification] ([Certification])
+    VALUES (@Certification);
+END;
+
+GO
+
+--Create the stored procedure to insert data into the Genre  table
+CREATE PROCEDURE AddGenre
+    @Genre VARCHAR(50)
+AS
+BEGIN
+    INSERT INTO MovieMate.[Genre] ([Genre])
+    VALUES (@Genre);
+END;
+
+GO
+
+--Create the stored procedure to insert data into the Location table
+CREATE PROCEDURE InsertLocation 
+    @Location VARCHAR(50)
+AS
+BEGIN
+    INSERT INTO MovieMate.[Location]([Location])
+    VALUES (@Location);
+END;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 -- Create the stored procedure to insert data into the User table
 CREATE PROCEDURE InsertUser 

@@ -1,9 +1,9 @@
- -- Create the MovieMate database
-CREATE DATABASE MovieMate;
-USE MovieMate;
+-- -- Create the MovieMate database
+--CREATE DATABASE MovieMate
+--USE MovieMate;
 
--- Create the schema MovieMate
-CREATE SCHEMA MovieMate;
+---- Create the schema MovieMate
+--CREATE SCHEMA MovieMate;
 
 -- Language table
 CREATE TABLE MovieMate.[Language] (
@@ -26,9 +26,10 @@ CREATE TABLE MovieMate.[Certification] (
 -- Location table
 CREATE TABLE MovieMate.[Location] (
     LocationId INT CONSTRAINT PK_Location_LocationId PRIMARY KEY IDENTITY(1,1),
-    Zipcode INT NOT NULL,
+    Zipcode INT NOT NULL UNIQUE,
     [Name] VARCHAR(100)
 );
+
 
 -- SeatCategory table
 CREATE TABLE MovieMate.[SeatCategory] (
@@ -87,6 +88,12 @@ CREATE TABLE MovieMate.[Movie] (
     [Description] TEXT,
     CreatedAt DATETIME NOT NULL DEFAULT GETDATE(),
 );
+-- MovieLanguage table
+CREATE TABLE MovieMate.[MovieLanguage] (
+    MovieLanguageId INT CONSTRAINT PK_MovieLanguage_MovieLanguageId PRIMARY KEY IDENTITY(1,1),
+    MovieId INT CONSTRAINT FK_MovieLanguage_MovieId FOREIGN KEY (MovieId) REFERENCES MovieMate.Movie(MovieId),
+    LanguageId INT CONSTRAINT FK_MovieLanguage_LanguageId  FOREIGN KEY (LanguageId ) REFERENCES MovieMate.[Language](LanguageId )
+);
 
 -- MovieGenre table
 CREATE TABLE MovieMate.[MovieGenre] (
@@ -114,11 +121,8 @@ CREATE TABLE MovieMate.[ShowTime] (
     TsId INT CONSTRAINT PK_ShowTime_TsId PRIMARY KEY IDENTITY(1,1),
     TimeId INT CONSTRAINT FK_ShowTime_TimeId FOREIGN KEY (TimeId) REFERENCES MovieMate.[Time](TimeId),
     ScreenId INT CONSTRAINT FK_ShowTime_ScreenId FOREIGN KEY (ScreenId) REFERENCES MovieMate.Screen(ScreenId),
-    MovieId INT CONSTRAINT FK_ShowTime_MovieId FOREIGN KEY (MovieId) REFERENCES MovieMate.Movie(MovieId),
+    MovieLanguageId INT CONSTRAINT FK_ShowTime_MovieLanguageId FOREIGN KEY (MovieLanguageId) REFERENCES MovieMate.MovieLanguage(MovieLanguageId),
 	[Date] DATE,
-	DirectorMovieId INT CONSTRAINT FK_ShowTime_DirectorMovieId FOREIGN KEY (DirectorMovieId) REFERENCES MovieMate.[DirectorMovie](DirectorMovieId),
-	MovieGenreId INT CONSTRAINT FK_ShowTime_MovieGenreId FOREIGN KEY (MovieGenreId) REFERENCES MovieMate.[MovieGenre](MovieGenreId),
-    LanguageId INT CONSTRAINT FK_ShowTime_LanguageId FOREIGN KEY (LanguageId) REFERENCES MovieMate.[Language](LanguageId),
     CreatedAt DATETIME DEFAULT GETDATE()  
 );
 -- PaymentMethod table
