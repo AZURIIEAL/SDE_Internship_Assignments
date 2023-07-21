@@ -1,15 +1,15 @@
 --Execution queries.
 
--- Example usage of the InsertUser stored procedure
+--InsertUser stored procedure
 EXEC InsertUser
     @Username = 'Abin',
     @Email = 'test@gmail.com',
     @Password = 'password123',
     @Address = 'ABC TVM';
 
-
+EXEC InsertUser 'Ashiq' ,'abc@gmail.com', '1234' ,'ASD TVM'
 	
--- Example usage of the InsertMovie stored procedure
+--InsertMovie stored procedure
 EXEC InsertMovie
     @Title = 'Titanic',
     @Certification = 1,
@@ -17,6 +17,4 @@ EXEC InsertMovie
     @Duration = 160,
     @PosterLink = 'http://poster.in',
     @TrailerLink = 'http://trailer.com',
-    @GenreId = 1,
-    @LanguageId = 1,
-    @DirectorId = 1;
+	@Description = 'good comedy'
