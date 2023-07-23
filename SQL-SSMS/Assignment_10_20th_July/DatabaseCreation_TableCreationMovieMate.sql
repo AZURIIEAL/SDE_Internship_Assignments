@@ -1,6 +1,6 @@
 -- -- Create the MovieMate database
 --CREATE DATABASE MovieMate
---USE MovieMate;
+--USE MovieMate;--
 
 ---- Create the schema MovieMate
 --CREATE SCHEMA MovieMate;
