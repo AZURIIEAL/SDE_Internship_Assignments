@@ -35,14 +35,26 @@ DELETE  FROM MovieMate.Director
 select * FROM MovieMate.Director
 
 
--- Create a table variable to hold GenreIds
-DECLARE @Genres MovieMate.EntityId;
-INSERT INTO @Genres (Id) VALUES (1); -- GenreId for 'Action'
-INSERT INTO @Genres (Id) VALUES (3); -- GenreId for 'Drama'
-INSERT INTO @Genres (Id) VALUES (4); -- GenreId for 'Thriller'
-INSERT INTO @Genres (Id) VALUES (5); -- GenreId for 'Sci-Fi'
+--AddDirector queries.
+EXEC AddLanguage 'English';
+GO
+EXEC AddLanguage 'Malayalam';
+GO
+EXEC AddLanguage 'Hindi';
+GO
+EXEC AddLanguage 'Tamil';
+GO
+EXEC AddLanguage 'Telugu';
+GO
 
-delete MovieMate.Movie
+--AddCertification queries.
+EXEC AddCertification 'A';
+GO
+EXEC AddCertification 'U/A';
+GO
+EXEC AddCertification 'U';
+GO
+
 
 
 -- Create a table variable to hold GenreIds
@@ -58,7 +70,7 @@ INSERT INTO @Directors (Id) VALUES (1); -- DirectorId for 'Christopher Nolan'
 
 -- Create a table variable to hold LanguageIds
 DECLARE @Languages MovieMate.EntityId;
-INSERT INTO @Languages (Id) VALUES (10); -- LanguageId for 'English'
+INSERT INTO @Languages (Id) VALUES (1); -- LanguageId for 'English'
 
 -- Insert Christopher Nolan's movies into the database
 
@@ -74,4 +86,303 @@ EXEC AddMovie
     @GenreIds = @Genres,
     @DirectorIds = @Directors,
     @LanguageIds = @Languages;
+
+	SELECT * FROM MovieMate.Movie
+	SELECT * FROM MovieMate.MovieGenre
+	SELECT * FROM MovieMate.DirectorMovie
+	sELECT * FROM MovieMate.MovieLanguage
+
+
+-- Movie 2: Memento
+	
+-- Create a table variable to hold GenreIds
+DECLARE @Genres MovieMate.EntityId;
+INSERT INTO @Genres (Id) VALUES (1); -- GenreId for 'Action'
+INSERT INTO @Genres (Id) VALUES (4); -- GenreId for 'Thriller'
+
+
+-- Create a table variable to hold DirectorIds
+DECLARE @Directors MovieMate.EntityId;
+INSERT INTO @Directors (Id) VALUES (1); -- DirectorId for 'Christopher Nolan'
+
+-- Create a table variable to hold LanguageIds
+DECLARE @Languages MovieMate.EntityId;
+INSERT INTO @Languages (Id) VALUES (1); -- LanguageId for 'English'
+
+-- Insert Christopher Nolan's movies into the database
+
+EXEC AddMovie
+    @Title = 'Memento',
+    @Certification = 2,
+    @ReleaseDate = '2000-03-16',
+    @Duration = 113,
+    @PosterLink = 'http://example.com/memento_poster.jpg',
+    @TrailerLink = 'http://example.com/memento_trailer.mp4',
+    @Description = 'A mind-bending tale of a man with short-term memory loss seeking revenge for his wifes murder.',
+    @GenreIds = @Genres,
+    @DirectorIds = @Directors,
+    @LanguageIds = @Languages;
+
+
+
+	
+-- Movie 3: Insomnia
+
+DECLARE @Genres MovieMate.EntityId;
+INSERT INTO @Genres (Id) VALUES (3); -- GenreId for 'Drama'
+INSERT INTO @Genres (Id) VALUES (4); -- GenreId for 'Thriller'
+
+-- Create a table variable to hold DirectorIds
+DECLARE @Directors MovieMate.EntityId;
+INSERT INTO @Directors (Id) VALUES (1); -- DirectorId for 'Christopher Nolan'
+
+-- Create a table variable to hold LanguageIds
+DECLARE @Languages MovieMate.EntityId;
+INSERT INTO @Languages (Id) VALUES (1); -- LanguageId for 'English'
+EXEC AddMovie
+    @Title = 'Insomnia',
+    @Certification = 2,
+    @ReleaseDate = '2002-05-24',
+    @Duration = 118,
+    @PosterLink = 'http://example.com/insomnia_poster.jpg',
+    @TrailerLink = 'http://example.com/insomnia_trailer.mp4',
+    @Description = 'A psychological thriller about a detective hunting a killer while battling his own insomnia.',
+    @GenreIds = @Genres,
+    @DirectorIds = @Directors,
+    @LanguageIds = @Languages;
+
+
+	
+-- Movie 4: Batman Begins'
+
+-- Create a table variable to hold GenreIds
+DECLARE @Genres MovieMate.EntityId;
+INSERT INTO @Genres (Id) VALUES (1); -- GenreId for 'Action'
+INSERT INTO @Genres (Id) VALUES (4); -- GenreId for 'Thriller'
+INSERT INTO @Genres (Id) VALUES (5); -- GenreId for 'Sci-Fi'
+
+-- Create a table variable to hold DirectorIds
+DECLARE @Directors MovieMate.EntityId;
+INSERT INTO @Directors (Id) VALUES (1); -- DirectorId for 'Christopher Nolan'
+
+-- Create a table variable to hold LanguageIds
+DECLARE @Languages MovieMate.EntityId;
+INSERT INTO @Languages (Id) VALUES (1); -- LanguageId for 'English'
+EXEC AddMovie
+    @Title = 'Batman Begins',
+    @Certification = 2,
+    @ReleaseDate = '2005-06-15',
+    @Duration = 140,
+    @PosterLink = 'http://example.com/batman_begins_poster.jpg',
+    @TrailerLink = 'http://example.com/batman_begins_trailer.mp4',
+    @Description = 'The origin story of the Dark Knight, Batman, as he fights crime and corruption in Gotham City.',
+    @GenreIds = @Genres,
+    @DirectorIds = @Directors,
+    @LanguageIds = @Languages;
+
+
+
+	
+-- Movie 5: The Prestige
+
+-- Create a table variable to hold GenreIds
+DECLARE @Genres MovieMate.EntityId;
+INSERT INTO @Genres (Id) VALUES (1); -- GenreId for 'Action'
+INSERT INTO @Genres (Id) VALUES (3); -- GenreId for 'Drama'
+INSERT INTO @Genres (Id) VALUES (4); -- GenreId for 'Thriller'
+
+-- Create a table variable to hold DirectorIds
+DECLARE @Directors MovieMate.EntityId;
+INSERT INTO @Directors (Id) VALUES (1); -- DirectorId for 'Christopher Nolan'
+
+-- Create a table variable to hold LanguageIds
+DECLARE @Languages MovieMate.EntityId;
+INSERT INTO @Languages (Id) VALUES (1); -- LanguageId for 'English'
+EXEC AddMovie
+    @Title = 'The Prestige',
+    @Certification = 1,
+    @ReleaseDate = '2006-10-20',
+    @Duration = 130,
+    @PosterLink = 'http://example.com/the_prestige_poster.jpg',
+    @TrailerLink = 'http://example.com/the_prestige_trailer.mp4',
+    @Description = 'A thrilling tale of rivalry between two magicians in Victorian-era London.',
+    @GenreIds = @Genres,
+    @DirectorIds = @Directors,
+    @LanguageIds = @Languages;
+
+	
+
+-- Movie 6: The Dark Knight
+
+-- Create a table variable to hold GenreIds
+DECLARE @Genres MovieMate.EntityId;
+INSERT INTO @Genres (Id) VALUES (1); -- GenreId for 'Action'
+INSERT INTO @Genres (Id) VALUES (3); -- GenreId for 'Drama'
+INSERT INTO @Genres (Id) VALUES (4); -- GenreId for 'Thriller'
+INSERT INTO @Genres (Id) VALUES (5); -- GenreId for 'Sci-Fi'
+
+-- Create a table variable to hold DirectorIds
+DECLARE @Directors MovieMate.EntityId;
+INSERT INTO @Directors (Id) VALUES (1); -- DirectorId for 'Christopher Nolan'
+
+-- Create a table variable to hold LanguageIds
+DECLARE @Languages MovieMate.EntityId;
+INSERT INTO @Languages (Id) VALUES (1); -- LanguageId for 'English'
+EXEC AddMovie
+    @Title = 'The Dark Knight',
+    @Certification = 1,
+    @ReleaseDate = '2008-07-18',
+    @Duration = 152,
+    @PosterLink = 'http://example.com/the_dark_knight_poster.jpg',
+    @TrailerLink = 'http://example.com/the_dark_knight_trailer.mp4',
+    @Description = 'The Joker wreaks havoc in Gotham City, challenging Batman to the ultimate test of morality.',
+    @GenreIds = @Genres,
+    @DirectorIds = @Directors,
+    @LanguageIds = @Languages;
+
+
+
+-- Movie 7: Inception
+	-- Create a table variable to hold GenreIds
+DECLARE @Genres MovieMate.EntityId;
+INSERT INTO @Genres (Id) VALUES (1); -- GenreId for 'Action'
+INSERT INTO @Genres (Id) VALUES (3); -- GenreId for 'Drama'
+INSERT INTO @Genres (Id) VALUES (4); -- GenreId for 'Thriller'
+
+-- Create a table variable to hold DirectorIds
+DECLARE @Directors MovieMate.EntityId;
+INSERT INTO @Directors (Id) VALUES (1); -- DirectorId for 'Christopher Nolan'
+
+-- Create a table variable to hold LanguageIds
+DECLARE @Languages MovieMate.EntityId;
+INSERT INTO @Languages (Id) VALUES (1); -- LanguageId for 'English'
+
+EXEC AddMovie
+    @Title = 'Inception',
+    @Certification = 1,
+    @ReleaseDate = '2010-07-16',
+    @Duration = 148,
+    @PosterLink = 'http://example.com/inception_poster.jpg',
+    @TrailerLink = 'http://example.com/inception_trailer.mp4',
+    @Description = 'A mind-bending heist film set within the realm of dreams.',
+    @GenreIds = @Genres,
+    @DirectorIds = @Directors,
+    @LanguageIds = @Languages;
+
+
+
+	
+-- Movie 8: The Dark Knight Rises
+DECLARE @Genres MovieMate.EntityId;
+INSERT INTO @Genres (Id) VALUES (1); -- GenreId for 'Action'
+INSERT INTO @Genres (Id) VALUES (3); -- GenreId for 'Drama'
+INSERT INTO @Genres (Id) VALUES (4); -- GenreId for 'Thriller'
+INSERT INTO @Genres (Id) VALUES (5); -- GenreId for 'Sci-Fi'
+
+-- Create a table variable to hold DirectorIds
+DECLARE @Directors MovieMate.EntityId;
+INSERT INTO @Directors (Id) VALUES (1); -- DirectorId for 'Christopher Nolan'
+
+-- Create a table variable to hold LanguageIds
+DECLARE @Languages MovieMate.EntityId;
+INSERT INTO @Languages (Id) VALUES (1); -- LanguageId for 'English'
+
+EXEC AddMovie
+    @Title = 'The Dark Knight Rises',
+    @Certification = 1,
+    @ReleaseDate = '2012-07-20',
+    @Duration = 165,
+    @PosterLink = 'http://example.com/the_dark_knight_rises_poster.jpg',
+    @TrailerLink = 'http://example.com/the_dark_knight_rises_trailer.mp4',
+    @Description = 'Batman returns to face the formidable Bane, who plans to destroy Gotham City.',
+    @GenreIds = @Genres,
+    @DirectorIds = @Directors,
+    @LanguageIds = @Languages;
+
+
+
+
+	
+-- Movie 9: Interstellar
+DECLARE @Genres MovieMate.EntityId;
+INSERT INTO @Genres (Id) VALUES (1); -- GenreId for 'Action'
+INSERT INTO @Genres (Id) VALUES (3); -- GenreId for 'Drama'
+INSERT INTO @Genres (Id) VALUES (4); -- GenreId for 'Thriller'
+INSERT INTO @Genres (Id) VALUES (5); -- GenreId for 'Sci-Fi'
+
+-- Create a table variable to hold DirectorIds
+DECLARE @Directors MovieMate.EntityId;
+INSERT INTO @Directors (Id) VALUES (1); -- DirectorId for 'Christopher Nolan'
+
+-- Create a table variable to hold LanguageIds
+DECLARE @Languages MovieMate.EntityId;
+INSERT INTO @Languages (Id) VALUES (1); -- LanguageId for 'English'
+EXEC AddMovie
+    @Title = 'Interstellar',
+    @Certification = 2,
+    @ReleaseDate = '2014-11-07',
+    @Duration = 169,
+    @PosterLink = 'http://example.com/interstellar_poster.jpg',
+    @TrailerLink = 'http://example.com/interstellar_trailer.mp4',
+    @Description = 'A journey beyond our solar system to find a new home for humanity.',
+    @GenreIds = @Genres,
+    @DirectorIds = @Directors,
+    @LanguageIds = @Languages;
+
+
+	
+-- Movie 10: Dunkirk
+DECLARE @Genres MovieMate.EntityId;
+INSERT INTO @Genres (Id) VALUES (1); -- GenreId for 'Action'
+INSERT INTO @Genres (Id) VALUES (3); -- GenreId for 'Drama'
+
+-- Create a table variable to hold DirectorIds
+DECLARE @Directors MovieMate.EntityId;
+INSERT INTO @Directors (Id) VALUES (1); -- DirectorId for 'Christopher Nolan'
+
+-- Create a table variable to hold LanguageIds
+DECLARE @Languages MovieMate.EntityId;
+INSERT INTO @Languages (Id) VALUES (1); -- LanguageId for 'English'
+EXEC AddMovie
+    @Title = 'Dunkirk',
+    @Certification = 2,
+    @ReleaseDate = '2017-07-13',
+    @Duration = 106,
+    @PosterLink = 'http://example.com/dunkirk_poster.jpg',
+    @TrailerLink = 'http://example.com/dunkirk_trailer.mp4',
+    @Description = 'An epic war film depicting the Dunkirk evacuation during World War II.',
+    @GenreIds = @Genres,
+    @DirectorIds = @Directors,
+    @LanguageIds = @Languages;
+
+
+SELECT * FROM MovieMate.Movie
+
+-- Adding theatre info and seat info.
+
+--AddDirector queries.
+EXEC AddSeatCategory
+	@TypeName = 'Economy',
+	@Price = 250.00
+GO
+
+EXEC AddSeatCategory
+	@TypeName = 'Executive',
+	@Price = 350.00
+GO
+EXEC AddSeatCategory
+	@TypeName = 'Gold',
+	@Price = 500.00
+GO
+
+EXEC AddSeatCategory
+	@TypeName = 'Balcony',
+	@Price = 600.00
+GO
+
+EXEC AddSeatCategory
+	@TypeName ='Luxury',
+	@Price = 800.00
+GO
+SElect * from MovieMate.SeatCategory
 
