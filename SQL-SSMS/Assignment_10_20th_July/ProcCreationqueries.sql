@@ -165,6 +165,24 @@ BEGIN
 END;
 
 
+ --Create Procedure to add theatre.
+
+CREATE PROCEDURE AddTheatre
+	@Name VARCHAR(100),
+	@LocationId INT,
+	@Address VARCHAR(200)
+
+	AS 
+	BEGIN
+	INSERT INTO MovieMate.Theatre([Name],LocationId,[Address]) VALUES(@Name,@LocationId,@Address)
+	END; 
+	
+	--addd a coloumn.
+ALTER TABLE MovieMate.Screen 
+ADD TheatreId INT CONSTRAINT FK_Screen_TheatreId  FOREIGN KEY (TheatreId) REFERENCES MovieMate.[Theatre](TheatreId)
+
+
+
 
 
 

@@ -42,8 +42,10 @@ CREATE TABLE MovieMate.[SeatCategory] (
 CREATE TABLE MovieMate.[Screen] (
     ScreenId INT CONSTRAINT PK_Screen_ScreenId PRIMARY KEY IDENTITY(1,1),
     [Name] VARCHAR(100) NOT NULL,
-    Capacity INT NOT NULL
+    Capacity INT NOT NULL,
+	TheatreId INT CONSTRAINT FK_Screen_TheatreId  FOREIGN KEY (TheatreId) REFERENCES MovieMate.[Theatre](TheatreId),
 );
+
 -- Time table
 CREATE TABLE MovieMate.[Time] (
     TimeId INT CONSTRAINT PK_Time_TimeId PRIMARY KEY IDENTITY(1,1),
@@ -73,7 +75,7 @@ CREATE TABLE MovieMate.[Theatre] (
     [Name] VARCHAR(100) NOT NULL,
     LocationId INT CONSTRAINT FK_Theatre_LocationId FOREIGN KEY (LocationId) REFERENCES MovieMate.[Location](LocationId),
     [Address] VARCHAR(200) NOT NULL,
-    RegistrationDate DATETIME NOT NULL DEFAULT GETDATE()   
+    RegistrationDate DATETIME NOT NULL DEFAULT GETDATE()
 );
 
 -- Movie table
