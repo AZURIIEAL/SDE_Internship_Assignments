@@ -366,6 +366,7 @@ EXEC AddSeatCategory
 	@Price = 250.00
 GO
 
+
 EXEC AddSeatCategory
 	@TypeName = 'Executive',
 	@Price = 350.00
@@ -386,3 +387,44 @@ EXEC AddSeatCategory
 GO
 SElect * from MovieMate.SeatCategory
 
+
+
+
+DECLARE @ScreenData MovieMate.EntityId2;
+INSERT INTO @ScreenData ([NAME],Capacity) VALUES ('A',40 );
+
+DECLARE @SeatData MovieMate.EntityId2;
+INSERT INTO @SeatData ([NAME],Capacity) VALUES ('A1',1 );
+INSERT INTO @SeatData ([NAME],Capacity) VALUES ('A2',1 );
+INSERT INTO @SeatData ([NAME],Capacity) VALUES ('A3',1 );
+INSERT INTO @SeatData ([NAME],Capacity) VALUES ('A4',1 );
+INSERT INTO @SeatData ([NAME],Capacity) VALUES ('A5',1 );
+INSERT INTO @SeatData ([NAME],Capacity) VALUES ('B1',2 );
+INSERT INTO @SeatData ([NAME],Capacity) VALUES ('B2',2 );
+INSERT INTO @SeatData ([NAME],Capacity) VALUES ('B3',2 );
+INSERT INTO @SeatData ([NAME],Capacity) VALUES ('B4',2 );
+INSERT INTO @SeatData ([NAME],Capacity) VALUES ('B5',2 );
+INSERT INTO @SeatData ([NAME],Capacity) VALUES ('C1',3 );
+INSERT INTO @SeatData ([NAME],Capacity) VALUES ('C2',3 );
+INSERT INTO @SeatData ([NAME],Capacity) VALUES ('C3',3 );
+INSERT INTO @SeatData ([NAME],Capacity) VALUES ('C4',3 );
+INSERT INTO @SeatData ([NAME],Capacity) VALUES ('C5',3 );
+INSERT INTO @SeatData ([NAME],Capacity) VALUES ('D1',4 );
+INSERT INTO @SeatData ([NAME],Capacity) VALUES ('D2',4 );
+INSERT INTO @SeatData ([NAME],Capacity) VALUES ('D3',4 );
+INSERT INTO @SeatData ([NAME],Capacity) VALUES ('D4',4 );
+INSERT INTO @SeatData ([NAME],Capacity) VALUES ('D5',4 );
+
+EXEC AddTheatre 
+	@Name = 'ABC theatre',
+	@LocationId = 1,
+	@Address = 'XYZ lane tvm',
+	@ScreenData = @ScreenData,
+	@SeatData = @SeatData
+
+	SELECT * FROM MovieMate.Theatre
+	SELECT * FROM MovieMate.Screen
+	SELECT * FROM MovieMate.Seat
+
+
+EXEC RemoveTheatre @TheatreId = 3; -- Replace 123 with the actual TheatreId you want to remove
