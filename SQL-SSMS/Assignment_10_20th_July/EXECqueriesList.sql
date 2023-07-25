@@ -427,4 +427,4 @@ EXEC AddTheatre
 	SELECT * FROM MovieMate.Seat
 
 
-EXEC RemoveTheatre @TheatreId = 3; -- Replace 123 with the actual TheatreId you want to remove
+EXEC RemoveTheatre @TheatreId = 4; 

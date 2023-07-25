@@ -276,7 +276,8 @@ CREATE PROCEDURE AddScreen
 
 
 GO
-ALTER PROCEDURE AddTheatre
+--Procedure to add theatres
+CREATE OR ALTER PROCEDURE AddTheatre
 	@Name VARCHAR(100),
 	@LocationId INT,
 	@Address VARCHAR(200),
@@ -290,7 +291,7 @@ BEGIN
 	-- @@Identity 
 	DECLARE @TheatreId1 INT = @@Identity
 
-
+	--Add Screen
 	EXEC AddScreen @TheatreId = @TheatreId1 ,@ScreenData = @ScreenData
 
 	DECLARE @ScreenID int
@@ -298,12 +299,12 @@ BEGIN
 	FROM MovieMate.Screen
 	WHERE TheatreId = @TheatreId1
 
-		--Add Seat
+	--Add Seat
 	EXEC AddSeat @ScreenId = @ScreenID, @SeatData = @SeatData
 END; 
 
 
-
+--procedures to remove theatres
 CREATE PROCEDURE RemoveTheatre
 	@TheatreId INT
 AS 
@@ -320,6 +321,7 @@ BEGIN
 END;
 
 
+--
 
 
 
