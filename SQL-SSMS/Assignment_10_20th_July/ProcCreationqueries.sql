@@ -102,7 +102,7 @@ CREATE TYPE MovieMate.EntityId AS TABLE(
 GO
 
 -- Create the stored procedure to insert data into the Movie table
-CREATE PROCEDURE AddMovie
+CREATE OR ALTER PROCEDURE AddMovie
     @Title VARCHAR(100),
     @Certification INT,
     @ReleaseDate DATE,
@@ -119,7 +119,7 @@ BEGIN
     VALUES (@Title, @Certification, @ReleaseDate, @Duration, @PosterLink, @TrailerLink,@Description);
 
 -- @@Identity @scope_identity 
-	DECLARE @MovieId INT = @@Identity
+	DECLARE @MovieId INT = SCOPE_IDENTITY()
 
 	INSERT MovieMate.MovieGenre (MovieId, GenreId)
 	SELECT @MovieId, Id
@@ -135,86 +135,7 @@ BEGIN
 END;
 
 GO
- --Create Procedure to delete movie.
-CREATE PROCEDURE DeleteMovie
-    @MovieId INT
-AS
-BEGIN
-    -- Delete the movie from Movie table
-    DELETE FROM MovieMate.Movie WHERE MovieId = @MovieId;
 
-    -- Delete the movie's genre associations from MovieGenre table
-    DELETE FROM MovieMate.MovieGenre WHERE MovieId = @MovieId;
-
-    -- Delete the movie's director associations from DirectorMovie table
-    DELETE FROM MovieMate.DirectorMovie WHERE MovieId = @MovieId;
-
-    -- Delete the movie's language associations from MovieLanguage table
-    DELETE FROM MovieMate.MovieLanguage WHERE MovieId = @MovieId;
-END;
-
-GO
-
- --Create Procedure to add theatre.
---Creating a type to set the values.
- CREATE TYPE  MovieMate.EntityId2 AS TABLE(
-	[NAME] VARCHAR(100),
-    capacity int
-	);
-GO
-
-
-
-
-CREATE PROCEDURE AddTheatre
-	@Name VARCHAR(100),
-	@LocationId INT,
-	@Address VARCHAR(200),
-	@ScreenData AS MovieMate.EntityId2 READONLY,
-	@SeatData AS MovieMate.EntityId2 READONLY
-
-	AS 
-	BEGIN
-
-	DECLARE @inserted Table (InsertedId INT)
-
-
-	INSERT INTO MovieMate.Theatre([Name],LocationId,[Address]) VALUES(@Name,@LocationId,@Address)
-	-- @@Identity @scope_identity 
-	DECLARE @TheatreId INT = @@Identity
-
-
-	INSERT MovieMate.Screen([Name],Capacity,TheatreId)
-	OUTPUT inserted.ScreenID INTO @inserted
-	SELECT [NAME],Capacity,@TheatreId
-	FROM @ScreenData
-
-	DECLARE @ScreenID INT = @@Identity
-
-	INSERT MovieMate.Seat(ScreenId, TypeId,SeatName)
-	SELECT B.InsertedId, [Name],Capacity
-	FROM @SeatData A
-	CROSS JOIN @inserted B
-	END; 
-
-
-
-	
-
-	--addd a coloumn.
-ALTER TABLE MovieMate.Screen 
-ADD TheatreId INT CONSTRAINT FK_Screen_TheatreId  FOREIGN KEY (TheatreId) REFERENCES MovieMate.[Theatre](TheatreId)
-
-ALTER TABLE MovieMate.Seat ADD SeatName VARCHAR(50)
-
-
-
-
-CREATE TYPE  MovieMate.EntityId2 AS TABLE(
-	[NAME] VARCHAR(100),
-    capacity int
-	);
-GO
 
 /*
 DECLARE @ScreenData MovieMate.EntityId2;
@@ -249,81 +170,146 @@ EXEC AddTheatre
 @ScreenData = ScreenData
 @SeatData = SeatData
 */
-CREATE PROCEDURE AddSeat
+
+ CREATE TYPE  MovieMate.SeatType AS TABLE(
+	[NAME] VARCHAR(100),
+    TypeId int
+	);
+GO
+ CREATE TYPE  MovieMate.ScreenData AS TABLE(
+	[NAME] VARCHAR(100),
+    Capacity int
+	);
+GO
+
+CREATE OR ALTER PROCEDURE AddSeat
 
 	@ScreenID INT,
-	@SeatData AS MovieMate.EntityId2 READONLY
+	@SeatData AS MovieMate.SeatType READONLY
 
 	AS 
 	BEGIN
 	INSERT MovieMate.Seat(SeatName,TypeId,ScreenId)
-	SELECT [NAME],Capacity,@ScreenId
+	SELECT [NAME],TypeId,@ScreenId
 	FROM @SeatData
 	END;
 
 
 GO
-CREATE PROCEDURE AddScreen
+
+
+CREATE OR ALTER PROCEDURE AddScreen
 	@TheatreId INT,
-	@ScreenData AS MovieMate.EntityId2 READONLY
+	@ScreenData AS MovieMate.ScreenData READONLY,
+	@SeatData AS MovieMate.SeatType READONLY
 
 	AS 
 	BEGIN
 	INSERT MovieMate.Screen([Name],Capacity,TheatreId)
 	SELECT [NAME],Capacity,@TheatreId
 	FROM @ScreenData
+	DECLARE @ScreenId INT = SCOPE_IDENTITY()
+	EXEC AddSeat @ScreenId = @ScreenId, @SeatData = @SeatData
+	DECLARE @Capacity INT ;
+	SET @Capacity =(SELECT COUNT(*) FROM MovieMate.Screen Scr
+	LEFT JOIN MovieMate.Seat Sea ON Scr.ScreenId = Sea.ScreenId WHERE Sea.ScreenId=@ScreenId)
+	
+	UPDATE MovieMate.Screen 
+	SET Capacity = @Capacity
+	WHERE ScreenId=@ScreenId
 	END;
-
-
+	
 GO
+
+
 --Procedure to add theatres
 CREATE OR ALTER PROCEDURE AddTheatre
 	@Name VARCHAR(100),
 	@LocationId INT,
 	@Address VARCHAR(200),
-	@ScreenData AS MovieMate.EntityId2 READONLY,
-	@SeatData AS MovieMate.EntityId2 READONLY
-
+	@ScreenData AS MovieMate.ScreenData READONLY,
+	@SeatData AS MovieMate.SeatType READONLY
 AS 
 BEGIN
-
 	INSERT INTO MovieMate.Theatre([Name],LocationId,[Address]) VALUES(@Name,@LocationId,@Address)
 	-- @@Identity 
-	DECLARE @TheatreId1 INT = @@Identity
-
-	--Add Screen
-	EXEC AddScreen @TheatreId = @TheatreId1 ,@ScreenData = @ScreenData
-
+	DECLARE @TheatreId1 INT =  SCOPE_IDENTITY()
+	--Add Screen and seat
+	EXEC AddScreen @TheatreId = @TheatreId1 ,@ScreenData = @ScreenData,@SeatData=@SeatData
 	DECLARE @ScreenID int
 	SELECT @ScreenID = ScreenId
 	FROM MovieMate.Screen
 	WHERE TheatreId = @TheatreId1
-
-	--Add Seat
-	EXEC AddSeat @ScreenId = @ScreenID, @SeatData = @SeatData
 END; 
 
+go
+--Add Time Procedure.
+CREATE OR ALTER PROCEDURE AddTime
+	@Time TIME,
+	@ShowTimeTile VARCHAR(100)
+	AS
+	BEGIN
+	INSERT INTO MovieMate.Time([Time],ShowTimeTitle) VALUES(@Time,@ShowTimeTile)
+	END
 
---procedures to remove theatres
-CREATE PROCEDURE RemoveTheatre
-	@TheatreId INT
-AS 
-BEGIN
-	-- Delete seats associated with the theatre's screens
-	DELETE FROM MovieMate.Seat
-	WHERE ScreenId IN (SELECT ScreenId FROM MovieMate.Screen WHERE TheatreId = @TheatreId)
+go
+	--Add Payment Method.
+CREATE OR ALTER PROCEDURE AddPaymentMethod
+	@PaymentMethod VARCHAR(100)
+	AS
+	BEGIN
+	INSERT INTO MovieMate.PaymentMethod(PaymentMethod) VALUES(@PaymentMethod)
+	END
+	
+	go
+--Add ShowTime Procedure.
+CREATE OR ALTER PROCEDURE AddShowTime
+	@TimeId INT,
+	@ScreenId INT,
+	@MovieLanguageId INT,
+	@Date DATE
 
-	-- Delete screens associated with the theatre
-	DELETE FROM MovieMate.Screen WHERE TheatreId = @TheatreId
+	AS
+	BEGIN
+	INSERT INTO MovieMate.ShowTime([TimeId],[ScreenId],[MovieLanguageId],[Date]) VALUES(@TimeId,@ScreenId,@MovieLanguageId,@Date)
+	END
 
-	-- Delete the theatre
-	DELETE FROM MovieMate.Theatre WHERE TheatreId = @TheatreId
-END;
+	go
+	--Creating a type
+CREATE TYPE MovieMate.BookMovieMultipleSeat AS TABLE(
+    [SeatId] int 
+);
+GO
+--Booking Procedures
+CREATE OR ALTER PROCEDURE BookMovie
+	@UserId INT,
+	@TsId INT,
+	@Paymentmethod INT,
+	@Seats AS MovieMate.BookMovieMultipleSeat READONLY
+	AS
+	BEGIN
+	INSERT INTO MovieMate.BookingHeader(UserId,TsId,PaymentMethod) VALUES(@UserId,@TsId,@Paymentmethod);
+	DECLARE @BookingId INT = SCOPE_IDENTITY();
+	INSERT  MovieMate.BookingDetails(BookingId,SeatId) 
+	SELECT @BookingId, [SeatId]
+	FROM @Seats;
+	--Total Tickets
+	DECLARE @TotalTickets INT;
+	SET @TotalTickets = (SELECT COUNT(BookingId) FROM MovieMate.BookingDetails);
+	--Total Price
+	DECLARE @TotalPrice INT;
+	SET @TotalPrice = (SELECT SUM(Price) FROM MovieMate.BookingDetails BD 
+	LEFT JOIN MovieMate.Seat S ON BD.SeatId=S.SeatId
+	LEFT JOIN MovieMate.SeatCategory SC ON S.TypeId = SC.TypeId)
+
+	UPDATE MovieMate.BookingHeader
+	SET TotalAmount = @TotalPrice,NumTickets = @TotalTickets
+	WHERE BookingId=@BookingId
+	END
 
 
---
 
-
+	 
 
 
 

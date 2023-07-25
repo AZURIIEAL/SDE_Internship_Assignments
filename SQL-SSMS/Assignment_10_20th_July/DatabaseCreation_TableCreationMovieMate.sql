@@ -49,7 +49,8 @@ CREATE TABLE MovieMate.[Screen] (
 -- Time table
 CREATE TABLE MovieMate.[Time] (
     TimeId INT CONSTRAINT PK_Time_TimeId PRIMARY KEY IDENTITY(1,1),
-    ShowTimeTitle VARCHAR(100) NOT NULL
+    ShowTimeTitle VARCHAR(100) NOT NULL,
+	[Time] TIME 
 );
 
 
@@ -129,9 +130,10 @@ CREATE TABLE MovieMate.[ShowTime] (
 );
 -- PaymentMethod table
 CREATE TABLE MovieMate.[PaymentMethod] (
-    PaymentMethodId INT CONSTRAINT PK_PaymentMethod_PaymentMethodId PRIMARY KEY,
+    PaymentMethodId INT CONSTRAINT PK_PaymentMethod_PaymentMethodId PRIMARY KEY IDENTITY(1,1),
     PaymentMethod VARCHAR(100) NOT NULL
 );
+
 
 -- BookingHeader table
 CREATE TABLE MovieMate.[BookingHeader] (
@@ -151,6 +153,15 @@ CREATE TABLE MovieMate.[BookingDetails] (
     SeatId INT CONSTRAINT FK_BookingDetails_SeatId FOREIGN KEY (SeatId) REFERENCES MovieMate.Seat(SeatId)
 );
 
+-- Time table
+CREATE TABLE MovieMate.[Time] (
+    TimeId INT CONSTRAINT PK_Time_TimeId PRIMARY KEY IDENTITY(1,1),
+    ShowTimeTitle VARCHAR(100) NOT NULL
+);
+
+
+SELECT * FROM MovieMate.Time
+SELECT * FROM [MovieMate].[BookingDetails]
 
 
 
