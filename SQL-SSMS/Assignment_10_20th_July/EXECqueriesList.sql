@@ -391,7 +391,7 @@ SElect * from MovieMate.SeatCategory
 
 
 DECLARE @ScreenData MovieMate.ScreenData;
-INSERT INTO @ScreenData ([NAME],Capacity) VALUES ('A',40 );
+INSERT INTO @ScreenData ([NAME],Capacity) VALUES ('Screen1',40 );
 
 DECLARE @SeatData MovieMate.SeatType;
 INSERT INTO @SeatData ([NAME],TypeId) VALUES ('A1',1 );
@@ -416,11 +416,43 @@ INSERT INTO @SeatData ([NAME],TypeId) VALUES ('D4',4 );
 INSERT INTO @SeatData ([NAME],TypeId) VALUES ('D5',4 );
 
 EXEC AddTheatre 
-	@Name = 'Theatre2',
-	@LocationId = 1,
-	@Address = 'XYZ lane tvm',
+	@Name = 'Krishna Theatre',
+	@LocationId = 80,
+	@Address = 'NH 47 Bypass Road, near Bhima Theatre, Kazhakkoottam, Kerala',
 	@ScreenData = @ScreenData,
 	@SeatData = @SeatData
+
+
+
+	
+DECLARE @ScreenData MovieMate.ScreenData;
+INSERT INTO @ScreenData ([NAME],Capacity) VALUES ('Screen1',40 );
+
+DECLARE @SeatData MovieMate.SeatType;
+INSERT INTO @SeatData ([NAME],TypeId) VALUES ('A1',1 );
+INSERT INTO @SeatData ([NAME],TypeId) VALUES ('A2',1 );
+INSERT INTO @SeatData ([NAME],TypeId) VALUES ('A3',1 );
+INSERT INTO @SeatData ([NAME],TypeId) VALUES ('A4',1 );
+INSERT INTO @SeatData ([NAME],TypeId) VALUES ('A5',1 );
+INSERT INTO @SeatData ([NAME],TypeId) VALUES ('B1',2 );
+INSERT INTO @SeatData ([NAME],TypeId) VALUES ('B2',2 );
+INSERT INTO @SeatData ([NAME],TypeId) VALUES ('B3',2 );
+INSERT INTO @SeatData ([NAME],TypeId) VALUES ('B4',2 );
+INSERT INTO @SeatData ([NAME],TypeId) VALUES ('B5',2 );
+INSERT INTO @SeatData ([NAME],TypeId) VALUES ('C1',3 );
+INSERT INTO @SeatData ([NAME],TypeId) VALUES ('C2',3 );
+INSERT INTO @SeatData ([NAME],TypeId) VALUES ('C3',3 );
+INSERT INTO @SeatData ([NAME],TypeId) VALUES ('C4',3 );
+INSERT INTO @SeatData ([NAME],TypeId) VALUES ('C5',3 );
+INSERT INTO @SeatData ([NAME],TypeId) VALUES ('D1',4 );
+INSERT INTO @SeatData ([NAME],TypeId) VALUES ('D2',4 );
+INSERT INTO @SeatData ([NAME],TypeId) VALUES ('D3',4 );
+INSERT INTO @SeatData ([NAME],TypeId) VALUES ('D4',4 );
+INSERT INTO @SeatData ([NAME],TypeId) VALUES ('D5',4 );
+
+EXEC AddScreen @TheatreId =2008 ,@ScreenData = @ScreenData,@seatData =@SeatData
+
+
 
 	SELECT * FROM MovieMate.Theatre
 	SELECT * FROM MovieMate.Screen
@@ -453,26 +485,29 @@ EXEC AddUser
 
 
 DECLARE @Seats MovieMate.BookMovieMultipleSeat
-INSERT INTO @Seats (SeatId) VALUES (24); 
-INSERT INTO @Seats (SeatId) VALUES (39); 
+INSERT INTO @Seats (SeatId) VALUES (2102); 
+INSERT INTO @Seats (SeatId) VALUES (2103); 
 
 EXEC BookMovie
 @UserId = 1,
-@TsId=1,
+@TsId=1002,
 @PaymentMethod = 1,
 @seats =@Seats
 
 
 SELECT * FROM MovieMate.BookingHeader
 SELECT * FROM MovieMate.BookingDetails
-
+SELECT * FROM MovieMate.[Language]
 SELECT * FROM MovieMate.MovieLanguage
+SELECT * FROM MovieMate.MovieGenre
 SELECT * FROM MovieMate.Screen
 SELECT * FROM MovieMate.[User]
 SELECT * FROM MovieMate.ShowTime
 SELECT * FRom MovieMate.[Time]
 SELECT * FROM MovieMate.Seat
 SELECT * FROM MovieMate.SeatCategory
+SELECT * from MovieMate.Theatre
+select * from MovieMate.[Location]
  
 ------
 DELETE MovieMate.Theatre
@@ -481,3 +516,33 @@ DELETE MovieMate.Screen
 DELETe MovieMate.BookingDetails
 DELETE MovieMate.ShowTime
 DELETE MovieMate.BookingHeader
+
+EXEC AddShowTime
+	@TimeId=5,
+	@ScreenId=2008,
+	@MovieLanguageId = 5,
+	@Date ='2023-07-27'
+EXEC AddShowTime
+	@TimeId=6,
+	@ScreenId=2008,
+	@MovieLanguageId = 6,
+	@Date ='2023-07-27'
+EXEC AddShowTime
+	@TimeId=7,
+	@ScreenId=2008,
+	@MovieLanguageId = 7,
+	@Date ='2023-07-27'
+EXEC AddShowTime
+	@TimeId=8,
+	@ScreenId=2008,
+	@MovieLanguageId = 8,
+	@Date ='2023-07-27'
+
+
+	select * FROM MovieMate.[User]
+	select * FROM MovieMate.ShowTime
+	select * FROM MovieMate.PaymentMethod
+	select * FROM MovieMate.Seat
+
+
+
