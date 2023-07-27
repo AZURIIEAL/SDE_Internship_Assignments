@@ -1,0 +1,12 @@
+C:\AbinFiles\Assignments\SDE_Internship_Assignments\C#_ASP.NetCore\Assignment_07_26th_July\Employee.model\bin\Debug\net6.0\Employee.model.deps.json
+C:\AbinFiles\Assignments\SDE_Internship_Assignments\C#_ASP.NetCore\Assignment_07_26th_July\Employee.model\bin\Debug\net6.0\Employee.model.dll
+C:\AbinFiles\Assignments\SDE_Internship_Assignments\C#_ASP.NetCore\Assignment_07_26th_July\Employee.model\bin\Debug\net6.0\Employee.model.pdb
+C:\AbinFiles\Assignments\SDE_Internship_Assignments\C#_ASP.NetCore\Assignment_07_26th_July\Employee.model\obj\Debug\net6.0\Employee.model.csproj.AssemblyReference.cache
+C:\AbinFiles\Assignments\SDE_Internship_Assignments\C#_ASP.NetCore\Assignment_07_26th_July\Employee.model\obj\Debug\net6.0\Employee.model.GeneratedMSBuildEditorConfig.editorconfig
+C:\AbinFiles\Assignments\SDE_Internship_Assignments\C#_ASP.NetCore\Assignment_07_26th_July\Employee.model\obj\Debug\net6.0\Employee.model.AssemblyInfoInputs.cache
+C:\AbinFiles\Assignments\SDE_Internship_Assignments\C#_ASP.NetCore\Assignment_07_26th_July\Employee.model\obj\Debug\net6.0\Employee.model.AssemblyInfo.cs
+C:\AbinFiles\Assignments\SDE_Internship_Assignments\C#_ASP.NetCore\Assignment_07_26th_July\Employee.model\obj\Debug\net6.0\Employee.model.csproj.CoreCompileInputs.cache
+C:\AbinFiles\Assignments\SDE_Internship_Assignments\C#_ASP.NetCore\Assignment_07_26th_July\Employee.model\obj\Debug\net6.0\Employee.model.dll
+C:\AbinFiles\Assignments\SDE_Internship_Assignments\C#_ASP.NetCore\Assignment_07_26th_July\Employee.model\obj\Debug\net6.0\refint\Employee.model.dll
+C:\AbinFiles\Assignments\SDE_Internship_Assignments\C#_ASP.NetCore\Assignment_07_26th_July\Employee.model\obj\Debug\net6.0\Employee.model.pdb
+C:\AbinFiles\Assignments\SDE_Internship_Assignments\C#_ASP.NetCore\Assignment_07_26th_July\Employee.model\obj\Debug\net6.0\ref\Employee.model.dll

@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "Employee.App/1.0.0": {
+        "dependencies": {
+          "Employee.model": "1.0.0"
+        },
+        "runtime": {
+          "Employee.App.dll": {}
+        }
+      },
+      "Employee.model/1.0.0": {
+        "runtime": {
+          "Employee.model.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Employee.App/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Employee.model/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
