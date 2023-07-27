@@ -1,0 +1,15 @@
+C:\AbinFiles\Assignments\SDE_Internship_Assignments\C#_ASP.NetCore\Assignment_07_26th_July\Assignment_6\Assignmen6\bin\Debug\net6.0\Assignmen6.exe
+C:\AbinFiles\Assignments\SDE_Internship_Assignments\C#_ASP.NetCore\Assignment_07_26th_July\Assignment_6\Assignmen6\bin\Debug\net6.0\Assignmen6.deps.json
+C:\AbinFiles\Assignments\SDE_Internship_Assignments\C#_ASP.NetCore\Assignment_07_26th_July\Assignment_6\Assignmen6\bin\Debug\net6.0\Assignmen6.runtimeconfig.json
+C:\AbinFiles\Assignments\SDE_Internship_Assignments\C#_ASP.NetCore\Assignment_07_26th_July\Assignment_6\Assignmen6\bin\Debug\net6.0\Assignmen6.dll
+C:\AbinFiles\Assignments\SDE_Internship_Assignments\C#_ASP.NetCore\Assignment_07_26th_July\Assignment_6\Assignmen6\bin\Debug\net6.0\Assignmen6.pdb
+C:\AbinFiles\Assignments\SDE_Internship_Assignments\C#_ASP.NetCore\Assignment_07_26th_July\Assignment_6\Assignmen6\obj\Debug\net6.0\Assignmen6.csproj.AssemblyReference.cache
+C:\AbinFiles\Assignments\SDE_Internship_Assignments\C#_ASP.NetCore\Assignment_07_26th_July\Assignment_6\Assignmen6\obj\Debug\net6.0\Assignmen6.GeneratedMSBuildEditorConfig.editorconfig
+C:\AbinFiles\Assignments\SDE_Internship_Assignments\C#_ASP.NetCore\Assignment_07_26th_July\Assignment_6\Assignmen6\obj\Debug\net6.0\Assignmen6.AssemblyInfoInputs.cache
+C:\AbinFiles\Assignments\SDE_Internship_Assignments\C#_ASP.NetCore\Assignment_07_26th_July\Assignment_6\Assignmen6\obj\Debug\net6.0\Assignmen6.AssemblyInfo.cs
+C:\AbinFiles\Assignments\SDE_Internship_Assignments\C#_ASP.NetCore\Assignment_07_26th_July\Assignment_6\Assignmen6\obj\Debug\net6.0\Assignmen6.csproj.CoreCompileInputs.cache
+C:\AbinFiles\Assignments\SDE_Internship_Assignments\C#_ASP.NetCore\Assignment_07_26th_July\Assignment_6\Assignmen6\obj\Debug\net6.0\Assignmen6.dll
+C:\AbinFiles\Assignments\SDE_Internship_Assignments\C#_ASP.NetCore\Assignment_07_26th_July\Assignment_6\Assignmen6\obj\Debug\net6.0\refint\Assignmen6.dll
+C:\AbinFiles\Assignments\SDE_Internship_Assignments\C#_ASP.NetCore\Assignment_07_26th_July\Assignment_6\Assignmen6\obj\Debug\net6.0\Assignmen6.pdb
+C:\AbinFiles\Assignments\SDE_Internship_Assignments\C#_ASP.NetCore\Assignment_07_26th_July\Assignment_6\Assignmen6\obj\Debug\net6.0\Assignmen6.genruntimeconfig.cache
+C:\AbinFiles\Assignments\SDE_Internship_Assignments\C#_ASP.NetCore\Assignment_07_26th_July\Assignment_6\Assignmen6\obj\Debug\net6.0\ref\Assignmen6.dll
