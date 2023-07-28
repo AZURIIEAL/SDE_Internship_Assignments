@@ -12,7 +12,7 @@
             multipliedList.Add(multipliedNum);
         }
 
-        Console.WriteLine("Original Array: " + string.Join(", ", originalArray));
-        Console.WriteLine("Multiplied List: " + string.Join(", ", multipliedList));
+        Console.WriteLine( originalArray);
+        Console.WriteLine( multipliedList);
     }
 }
