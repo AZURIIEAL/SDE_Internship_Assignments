@@ -1,0 +1,61 @@
+﻿@model IEnumerable<Employee>
+@{
+    ViewData["Title"] = "ReadData";
+}
+<h1> Read , Update and Delete </h1>
+<h5>read the employee details</h5>
+<br />
+<h6>Here is the data for all the listed employees</h6><br />
+<div>
+    <table style="width:70%;">
+        @*Table Head*@
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Gender</th>
+                <th>EmployeeType</th>
+                <th>Salary</th>
+                <th>Department</th>
+            </tr>
+        </thead>
+
+        @*Table body*@
+        <tbody>
+            @*For the data part we need to enumerate through the list*@
+            @foreach (Employee emp in Model)
+            {
+                <tr>
+                    <td>
+                        @emp.Id
+                    </td>
+                    <td>
+                        @emp.Name
+                    </td>
+                    <td>
+                        @emp.Gender
+                    </td>
+                    <td>
+                        @emp.EmployeeType
+                    </td>
+                    <td>
+                        @emp.Salary
+                    </td>
+                    <td>
+                        @emp.Department
+                    </td>
+                    <td>
+                        @*An Update route*@
+                        @*Update’ action method and having ‘empId’ as query string*@
+                        <a asp-action="Update" asp-route-empId="@emp.Id">Update</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<div style="padding-top:70px">
+        <a asp-action="Create">Create an employee entry</a>
+</div>
+
+

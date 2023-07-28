@@ -31,18 +31,18 @@ namespace CRUD_App.Controllers
         [HttpGet]
         public IActionResult Update(string empname)
         {
-            Employee employee = Repository.AllEmpoyees.Where(e => e.Name == empname).FirstOrDefault();
+            Employee employee = Repository.AllEmpoyees.FirstOrDefault(e => e.Name == empname);
             return View();
         }
 
         [HttpPost]
         public IActionResult Update(Employee employee, string empname)
         {
-            Repository.AllEmpoyees.Where(e => e.Name == empname).FirstOrDefault().Age = employee.Age;
-            Repository.AllEmpoyees.Where(e => e.Name == empname).FirstOrDefault().Salary = employee.Salary;
-            Repository.AllEmpoyees.Where(e => e.Name == empname).FirstOrDefault().Department = employee.Department;
-            Repository.AllEmpoyees.Where(e => e.Name == empname).FirstOrDefault().Sex = employee.Sex;
-            Repository.AllEmpoyees.Where(e => e.Name == empname).FirstOrDefault().Name = employee.Name;
+            Repository.AllEmpoyees.FirstOrDefault(e => e.Name == empname).Age = employee.Age;
+            Repository.AllEmpoyees.FirstOrDefault(e => e.Name == empname).Salary = employee.Salary;
+            Repository.AllEmpoyees.FirstOrDefault(e => e.Name == empname).Department = employee.Department;
+            Repository.AllEmpoyees.FirstOrDefault(e => e.Name == empname).Sex = employee.Sex;
+            Repository.AllEmpoyees.FirstOrDefault(e => e.Name == empname).Name = employee.Name;
 
             return RedirectToAction("Index");
         }

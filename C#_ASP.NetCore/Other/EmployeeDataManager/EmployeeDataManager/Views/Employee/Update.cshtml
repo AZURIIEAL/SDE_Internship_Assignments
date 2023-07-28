@@ -1,0 +1,63 @@
+﻿@model Employee;
+@{
+    ViewData["Title"] = "Create Entry";
+}
+<h1> Update </h1>
+
+<h6>Add the employee details</h6>
+<br />
+<div>
+    <form method="post">
+        @*Here there would be the Name,Gender,EmployeeType,salary and department forum*@
+
+        @*We dont need the Id part as we will be auto generating it.*@
+        <p>
+            @*The labeland input box for the name part*@
+            <label asp-for="Name">Your Name :</label>
+            <input asp-for="Name" />
+        </p>
+
+        <p>
+            @*The labeland input box for the Gender part*@
+            <label asp-for="Gender">Your Gender :</label><br />
+            <input type="radio" asp-for="Gender" value="M" />Male<br />
+            <input type="radio" asp-for="Gender" value="F" />Female
+        </p>
+
+        <p>
+            @*The labeland input box for the EmployeeType part*@
+            <label>State your Employment Status: </label><br />
+            <input type="radio" asp-for="EmployeeType" value="P" />Permanent Employee<br />
+            <input type="radio" asp-for="EmployeeType" value="T" />Temporary Employee
+        </p>
+
+        <p>
+            @*The labeland input box for the Salary part*@
+            <label asp-for="Salary">Your Salary :</label>
+            <input asp-for="Salary" />
+        </p>
+
+        <p>
+            @*The labeland input box for the Department part*@
+            <label asp-for="Department">Your Department:</label>
+            <select asp-for="Department">
+                <option value="N/A"> --Select an option-- </option>
+                <option value="Development">Development</option>
+                <option value="HR">HR</option>
+                <option value="Testing">Testing</option>
+                <option value="Research">Research</option>
+            </select>
+        </p>
+
+        <p>
+            @*We need the submit button for the model binding feature*@
+            <button type="submit">Submit</button>
+        </p>
+
+    </form>
+</div>
+<div style="padding-top:70px">
+    <a asp-action="Read">View All Employees</a>
+</div>
+
+
