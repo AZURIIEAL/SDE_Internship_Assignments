@@ -49,6 +49,12 @@
                         @*Update’ action method and having ‘empId’ as query string*@
                         <a asp-action="Update" asp-route-empId="@emp.Id">Update</a>
                     </td>
+
+                    <td>
+                        <form asp-route-empId="@emp.Id" asp-action="Delete" method="post">
+                            <button type="submit">Delete</button>
+                        </form>
+                    </td>
                 </tr>
             }
         </tbody>

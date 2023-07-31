@@ -44,6 +44,15 @@ namespace EmployeeDataManager.Controllers
             DbMimic.AllEmpoyees.FirstOrDefault(x => x.Id == empId).Department = employee.Department;
             return RedirectToAction("Read");
         }
+
+
+        [HttpPost]
+        public IActionResult Delete(int empId)
+        {
+            Employee employee = DbMimic.AllEmpoyees.Where(e => e.Id == empId).FirstOrDefault();
+            DbMimic.Delete(employee);
+            return RedirectToAction("Read");
+        }
     }
 }
 
