@@ -22,6 +22,9 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
+
+app.UseMiddleware<ResponseEditingMiddleware>();
+
 app.UseMiddleware<RequestEditingMiddleware>();
 
 app.UseMiddleware<ShortCircuitMiddleware>();
