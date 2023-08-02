@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "w/Ll63QvUlT1FygfwLwesPDC7of+SqYMtTtI5L4v4Ra9anx6MSjor+xSmXJ5nxD2z8HxwZhPGO5vO0kkknn3LQ==",
+  "dgSpecHash": "dT2Zs0+mrmYNI1Y9eoLZ3r1Y1pwJ2rRE0zTfadKoHxwgNRGUHOjVarZgvRwVKKxnOm2mA9tHEsvpIrjv1QtmAA==",
   "success": true,
-  "projectFilePath": "C:\\AbinFiles\\Assignments\\SDE_Internship_Assignments\\C#_ASP.NetCore\\Other\\CRUD_App\\CRUD_App\\CRUD_App.csproj",
+  "projectFilePath": "C:\\AbinFiles\\Assignments\\SDE_Internship_Assignments\\C#_ASP.NetCore\\DotNetCoreWeb\\CRUD_App\\CRUD_App\\CRUD_App.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

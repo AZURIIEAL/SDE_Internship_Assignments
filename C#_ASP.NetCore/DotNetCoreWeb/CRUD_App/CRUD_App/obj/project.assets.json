@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\AbinFiles\\Assignments\\SDE_Internship_Assignments\\C#_ASP.NetCore\\Other\\CRUD_App\\CRUD_App\\CRUD_App.csproj",
+      "projectUniqueName": "C:\\AbinFiles\\Assignments\\SDE_Internship_Assignments\\C#_ASP.NetCore\\DotNetCoreWeb\\CRUD_App\\CRUD_App\\CRUD_App.csproj",
       "projectName": "CRUD_App",
-      "projectPath": "C:\\AbinFiles\\Assignments\\SDE_Internship_Assignments\\C#_ASP.NetCore\\Other\\CRUD_App\\CRUD_App\\CRUD_App.csproj",
+      "projectPath": "C:\\AbinFiles\\Assignments\\SDE_Internship_Assignments\\C#_ASP.NetCore\\DotNetCoreWeb\\CRUD_App\\CRUD_App\\CRUD_App.csproj",
       "packagesPath": "C:\\Users\\CQ-Abin\\.nuget\\packages\\",
-      "outputPath": "C:\\AbinFiles\\Assignments\\SDE_Internship_Assignments\\C#_ASP.NetCore\\Other\\CRUD_App\\CRUD_App\\obj\\",
+      "outputPath": "C:\\AbinFiles\\Assignments\\SDE_Internship_Assignments\\C#_ASP.NetCore\\DotNetCoreWeb\\CRUD_App\\CRUD_App\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\CQ-Abin\\AppData\\Roaming\\NuGet\\NuGet.Config",
