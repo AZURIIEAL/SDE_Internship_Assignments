@@ -1,3 +1,4 @@
+using AspnetCoreCofiguration.Middlewares;
 using Configuation.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -17,9 +18,15 @@ if (!app.Environment.IsDevelopment())
     // The default HSTS value is 30 days.
     app.UseHsts();
 }
+ 
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
+app.UseMiddleware<RequestEditingMiddleware>();
+
+app.UseMiddleware<ShortCircuitMiddleware>();
+
+app.UseMiddleware<ContentMiddleware>();
 
 app.UseRouting();
 
