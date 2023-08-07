@@ -1,0 +1,22 @@
+table {
+    border-collapse: collapse;
+    width: 50%;
+    margin: 20px;
+    font-family: Arial, sans-serif;
+    border: 1px solid #000000; /* Add border to the whole table */
+  }
+  
+  th,
+  td {
+    border: 1px solid #000000;
+    padding: 8px;
+    text-align: center;
+  }
+  
+  th {
+    background-color: #bdc0c0;
+  }
+  .bold-text {
+    font-weight: bold;
+  }
+  
