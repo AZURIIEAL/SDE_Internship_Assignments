@@ -1,9 +1,18 @@
 ﻿namespace DependencyInjection.Models
 {
-    public class Repository : IRepository
+    public class Repository : IRepository //Extends an interface.
     {
-        private Dictionary<string, Product> products;
-        public Repository()
+
+        public IEnumerable<Product> Products => products.Values;
+        public Product this[string name] => products[name];
+
+
+        public void AddProduct(Product product) => products[product.Name] = product;
+        public void DeleteProduct(Product product) => products.Remove(product.Name);
+
+
+        private Dictionary<string, Product> products; //Declaring an interface.
+        public Repository() //Ctor
         {
             products = new Dictionary<string, Product>(); 
             new List<Product> {
@@ -13,9 +22,7 @@
             }.ForEach(p => AddProduct(p));
         }
 
-        public IEnumerable<Product> Products => products.Values;    
-        public Product this[string name] => products[name];
-        public void AddProduct(Product product) => products[product.Name] = product;
-        public void DeleteProduct(Product product) => products.Remove(product.Name);
+       
+        
     }
 }
