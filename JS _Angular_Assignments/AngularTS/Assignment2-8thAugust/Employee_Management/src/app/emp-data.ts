@@ -1,5 +1,5 @@
 // Interface
-export interface EmpData {
+export interface IEmpData {
     id: number;
     firstName: string;
     lastName: string;

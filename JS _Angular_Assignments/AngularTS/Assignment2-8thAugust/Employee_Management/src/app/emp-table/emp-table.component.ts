@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { EmpData } from '../emp-data';
+import { IEmpData } from '../emp-data';
 
 @Component({
   selector: 'app-emp-table',
@@ -7,7 +7,7 @@ import { EmpData } from '../emp-data';
   styleUrls: ['./emp-table.component.sass']
 })
 export class EmpTableComponent {
-  employeeList: EmpData[] = [
+  employeeList: IEmpData[] = [
     {
       id: 1,
       firstName: "Abin",

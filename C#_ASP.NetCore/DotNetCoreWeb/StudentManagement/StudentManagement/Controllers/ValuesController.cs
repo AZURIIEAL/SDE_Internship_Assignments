@@ -9,14 +9,7 @@ namespace StudentManagement.Controllers
     [ApiController]
     public class ValuesController : ControllerBase
     {
-        // GET details by Identity.
-        [HttpGet("{id}")]
-        public string Get(int id)
-        {
-            return "value";
-        }
-
-
+        //Insert Values into 
         [HttpPost]
         public IActionResult PostData(string firstName,string lastName,string Address,string Email)
         {
@@ -28,7 +21,30 @@ namespace StudentManagement.Controllers
             student.Email = Email;
             query.AddStudent(student);
             return Ok();
+
         }
+
+
+        // GET details by Identity.
+        [HttpGet("{id}")]
+        public IActionResult GetById(int Id)
+        {
+
+            var donone = .Find(Id);
+            if (donone == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                return Ok(donone);
+            }
+         
+
+
+            return Ok(donone);
+        }
+
         /* // POST api/<ValuesController>
          [HttpPost]
          public void Post([FromBody] string value)
