@@ -9,7 +9,7 @@ namespace StudentManagement.Controllers
     [ApiController]
     public class ValuesController : ControllerBase
     {
-        // GET api/<ValuesController>/5
+        // GET details by Identity.
         [HttpGet("{id}")]
         public string Get(int id)
         {
@@ -20,8 +20,6 @@ namespace StudentManagement.Controllers
         [HttpPost]
         public IActionResult PostData(string firstName,string lastName,string Address,string Email)
         {
-
-            //Need to create a new Donation object
             DbQuery query = new DbQuery();
             Student student = new Student();
             student.FirstName = firstName;
