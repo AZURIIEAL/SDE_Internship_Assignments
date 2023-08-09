@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { IEmpData } from '../emp-data';
 
 
@@ -9,4 +9,9 @@ import { IEmpData } from '../emp-data';
 })
 export class EmpDetailComponent {
   @Input() employeeDetail?: IEmpData;
+  @Output() goBackEvent = new EventEmitter();
+
+  goBack() {
+    this.goBackEvent.emit();
+  }
 }

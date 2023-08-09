@@ -48,4 +48,7 @@ export class EmpTableComponent {
   GetDataFunction(emp: IEmpData) {
     this.selectedEmployeeDetail = emp;
   }
+  handleGoBack() {
+    this.selectedEmployeeDetail = undefined;
+  }
 }

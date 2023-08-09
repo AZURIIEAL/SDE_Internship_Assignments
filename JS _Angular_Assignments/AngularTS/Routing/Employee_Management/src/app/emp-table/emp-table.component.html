@@ -1,4 +1,4 @@
-<div>
+<div *ngIf="!selectedEmployeeDetail">
   <table>
     <thead>
       <tr>
@@ -14,4 +14,4 @@
     </tbody>
   </table>
 </div>
-<app-emp-detail [employeeDetail]="selectedEmployeeDetail"></app-emp-detail>
+<app-emp-detail (buttonClicked)="selectedEmployeeDetail = undefined" *ngIf="selectedEmployeeDetail" [employeeDetail]="selectedEmployeeDetail"></app-emp-detail>
