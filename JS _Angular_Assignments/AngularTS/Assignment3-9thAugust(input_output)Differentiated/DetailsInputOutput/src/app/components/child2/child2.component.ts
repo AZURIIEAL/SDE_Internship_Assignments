@@ -1,13 +1,12 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { IEmpData } from '../emp-data';
-
+import { IEmpData } from '../interface/IEmpData';
 
 @Component({
-  selector: 'app-emp-detail',
-  templateUrl: './emp-detail.component.html',
-  styleUrls: ['./emp-detail.component.sass']
+  selector: 'app-child2',
+  templateUrl: './child2.component.html',
+  styleUrls: ['./child2.component.css'],
 })
-export class EmpDetailComponent {
+export class Child2Component {
   @Input() employeeDetail?: IEmpData;
   @Output() goBackEvent = new EventEmitter();
 

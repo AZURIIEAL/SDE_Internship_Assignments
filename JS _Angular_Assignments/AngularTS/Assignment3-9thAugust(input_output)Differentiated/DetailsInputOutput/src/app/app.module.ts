@@ -1,21 +1,18 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { EmpTableComponent } from './emp-table/emp-table.component';
-import { EmpDetailComponent } from './emp-detail/emp-detail.component';
+import { Child1Component } from './components/child1/child1.component';
+import { Child2Component } from './components/child2/child2.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    EmpTableComponent,
-    EmpDetailComponent
+    Child1Component,
+    Child2Component
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule
+    BrowserModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -3,13 +3,9 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Employee_Management": {
+    "DetailsInputOutput": {
       "projectType": "application",
-      "schematics": {
-        "@schematics/angular:component": {
-          "style": "sass"
-        }
-      },
+      "schematics": {},
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -17,20 +13,19 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/employee-management",
+            "outputPath": "dist/details-input-output",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
               "zone.js"
             ],
             "tsConfig": "tsconfig.app.json",
-            "inlineStyleLanguage": "sass",
             "assets": [
               "src/favicon.ico",
               "src/assets"
             ],
             "styles": [
-              "src/styles.sass"
+              "src/styles.css"
             ],
             "scripts": []
           },
@@ -65,10 +60,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "Employee_Management:build:production"
+              "browserTarget": "DetailsInputOutput:build:production"
             },
             "development": {
-              "browserTarget": "Employee_Management:build:development"
+              "browserTarget": "DetailsInputOutput:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -76,7 +71,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "Employee_Management:build"
+            "browserTarget": "DetailsInputOutput:build"
           }
         },
         "test": {
@@ -87,21 +82,17 @@
               "zone.js/testing"
             ],
             "tsConfig": "tsconfig.spec.json",
-            "inlineStyleLanguage": "sass",
             "assets": [
               "src/favicon.ico",
               "src/assets"
             ],
             "styles": [
-              "src/styles.sass"
+              "src/styles.css"
             ],
             "scripts": []
           }
         }
       }
     }
-  },
-  "cli": {
-    "analytics": false
   }
 }
