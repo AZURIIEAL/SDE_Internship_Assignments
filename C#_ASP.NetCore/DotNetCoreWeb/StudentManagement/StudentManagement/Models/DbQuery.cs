@@ -1,4 +1,5 @@
 ﻿using Microsoft.Data.SqlClient;
+using System.Collections.Generic;
 
 namespace StudentManagement.Models
 {
@@ -68,9 +69,37 @@ namespace StudentManagement.Models
                 returnObj.LastName = fromDbReturnData["LastName"].ToString();
                 returnObj.Address = fromDbReturnData["Address"].ToString();
                 returnObj.Email = fromDbReturnData["Email"].ToString();
+             
             }
 
             return returnObj;
+        }
+
+        public List<Student> GetStudents()
+        {
+            List<Student> students = new List<Student>();
+            using SqlConnection con = new SqlConnection( connectionString);
+            con.Open();
+
+            string query = "GetAll";
+            using SqlCommand cmd = new SqlCommand(query, con);
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            cmd.ExecuteNonQuery();
+
+            using SqlDataReader fromDbReturnData = cmd.ExecuteReader();
+
+            while (fromDbReturnData.Read())
+            {
+                Student returnObj = new Student();
+                returnObj.FirstName = fromDbReturnData["FirstName"].ToString();
+                returnObj.LastName = fromDbReturnData["LastName"].ToString();
+                returnObj.Address = fromDbReturnData["Address"].ToString();
+                returnObj.Email = fromDbReturnData["Email"].ToString();
+                students.Add(returnObj);
+            }
+
+            return students;
+
         }
 
         public void UpdateStudent(int id ,Student student)

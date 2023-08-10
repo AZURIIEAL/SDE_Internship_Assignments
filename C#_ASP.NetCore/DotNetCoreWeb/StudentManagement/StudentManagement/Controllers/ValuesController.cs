@@ -44,6 +44,17 @@ namespace StudentManagement.Controllers
         }
 
 
+        //READ
+        // GET details by Identity.
+        [HttpGet("FindDataAll")]
+        public IActionResult GetAll()
+        {
+            DbQuery query = new DbQuery();
+            return Ok(query.GetStudents());
+
+        }
+
+
         [HttpPut("UpdateData/{id}")]
         public IActionResult UpdateData(int id, [FromBody] Student updatedStudent)
         {
