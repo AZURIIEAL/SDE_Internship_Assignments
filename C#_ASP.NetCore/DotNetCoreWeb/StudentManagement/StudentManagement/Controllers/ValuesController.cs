@@ -9,8 +9,9 @@ namespace StudentManagement.Controllers
     [ApiController]
     public class ValuesController : ControllerBase
     {
+        //CREATE
         //Insert Values into 
-        [HttpPost]
+        [HttpPost("InsertData")]
         public IActionResult PostData(string firstName,string lastName,string Address,string Email)
         {
             DbQuery query = new DbQuery();
@@ -21,17 +22,17 @@ namespace StudentManagement.Controllers
             student.Email = Email;
             query.AddStudent(student);
             return Ok();
-
         }
 
-
+        //READ
         // GET details by Identity.
-        [HttpGet("{id}")]
-        public IActionResult GetById(int Id)
+        [HttpGet("FindData/{id}")]
+        public IActionResult GetById(int id)
         {
-
-            var donone = .Find(Id);
+            DbQuery query = new DbQuery();
+            Student donone = query.FindStudentById(id);
             if (donone == null)
+
             {
                 return NotFound();
             }
@@ -39,28 +40,63 @@ namespace StudentManagement.Controllers
             {
                 return Ok(donone);
             }
-         
 
-
-            return Ok(donone);
         }
 
-        /* // POST api/<ValuesController>
-         [HttpPost]
-         public void Post([FromBody] string value)
-         {
-         }
 
-         // PUT api/<ValuesController>/5
-         [HttpPut("{id}")]
-         public void Put(int id, [FromBody] string value)
-         {
-         }
+        [HttpPut("UpdateData/{id}")]
+        public IActionResult UpdateData(int id, [FromBody] Student updatedStudent)
+        {
+            if (updatedStudent == null)
+            {
+                return BadRequest("Invalid data");
+            }
 
-         // DELETE api/<ValuesController>/5
-         [HttpDelete("{id}")]
-         public void Delete(int id)
-         {
-         }*/
+            DbQuery query = new DbQuery();
+            Student existingStudent = query.FindStudentById(id);
+
+            if (existingStudent == null)
+            {
+                return NotFound();
+            }
+
+            // Update only the provided fields, keeping the previous data if a field is not provided.
+            if (!string.IsNullOrWhiteSpace(updatedStudent.FirstName))
+            {
+                existingStudent.FirstName = updatedStudent.FirstName;
+            }
+            if (!string.IsNullOrWhiteSpace(updatedStudent.LastName))
+            {
+                existingStudent.LastName = updatedStudent.LastName;
+            }
+            if (!string.IsNullOrWhiteSpace(updatedStudent.Address))
+            {
+                existingStudent.Address = updatedStudent.Address;
+            }
+            if (!string.IsNullOrWhiteSpace(updatedStudent.Email))
+            {
+                existingStudent.Email = updatedStudent.Email;
+            }
+
+            query.UpdateStudent(id,existingStudent);
+
+            return Ok();
+        }
+        [HttpDelete("{id}")]
+        public IActionResult DeleteData(int id)
+        {
+            DbQuery query = new DbQuery();
+            Student existingStudent = query.FindStudentById(id);
+            if (existingStudent == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                query.DeleteStudent(id);
+                return Ok("Deleted");
+            }
+        }
+
     }
 }
