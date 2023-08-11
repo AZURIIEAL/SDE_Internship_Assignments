@@ -15,7 +15,10 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<DonationsAPIDbContext>(options =>
 options.UseSqlServer(builder.Configuration.GetConnectionString("SQLConnection")));
 //After all this we would do our first migration
+//With Migrations we can create the database and it’s tables based on the Entity & Database Context classes.
+//Check that in the database connection string we have provided the database
 
+//open NuGet Package Manager Console window to initiate the migration
 
 
 

@@ -10,7 +10,7 @@
         public string Name { get; set; } =string.Empty;
         public string BloodGroup { get; set; } = string.Empty;
         public string Email { get; set; } = string.Empty;
-        public long Phone { get; set; }
+        public string Phone { get; set; } = string.Empty;
         public string Address { get; set; } = string.Empty;
 
         //After this we need to create a class file that would act like a middle man towards the database

@@ -18,6 +18,8 @@ namespace BloodDonationsEF.DataBaseMan
         }
         //Create a single property as we only need one model to work with,its of type DBSet<//Having our model domain>.
         public DbSet<DonationFull> Donation { get; set; }
+
+
         //We would need to Inject this to the Program.cs as a service for the connection later.
 
     }
