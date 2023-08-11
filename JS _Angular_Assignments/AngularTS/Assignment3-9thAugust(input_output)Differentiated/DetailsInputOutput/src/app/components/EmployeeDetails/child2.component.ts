@@ -2,7 +2,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { IEmpData } from '../interface/IEmpData';
 
 @Component({
-  selector: 'app-child2',
+  selector: 'app-EmployeeDetails',
   templateUrl: './child2.component.html',
   styleUrls: ['./child2.component.css'],
 })

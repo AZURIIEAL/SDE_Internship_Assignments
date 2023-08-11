@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IEmpData } from '../interface/IEmpData';
 
 @Component({
-  selector: 'app-child1',
+  selector: 'app-EmployeeList',
   templateUrl: './child1.component.html',
   styleUrls: ['./child1.component.css'],
 })
