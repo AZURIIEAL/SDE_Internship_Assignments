@@ -43,14 +43,31 @@ namespace BloodDonationsEF.Controllers
         {
             return Ok(dbContext?.Donation.ToList());
         }
+
+        //Get a single response
+        [HttpGet]
+        [Route("GetDataById/{id:Guid}")]
+        public IActionResult GetDonation(Guid id)
+        {
+            var donone = dbContext?.Donation.Find(id);
+            if (donone == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                return Ok(donone);
+            }
+
+        }
+
         //As we have data and now it can be viewed too ,now our task is updation
         //Now to edit/Update the data,we can use Put for that.
-        [HttpPut("Updation/{id:guid}")]
+        [HttpPut("Updation/{id:Guid}")]
         //but we would require a ID here.
-        public IActionResult UpdateDonations(Guid Id,[FromQuery] DonationAdd addDonationDataUpdation)
+        public IActionResult UpdateDonations(Guid id, [FromQuery] DonationAdd addDonationDataUpdation)
         {
-            DonationFull donationNEW = new DonationFull();
-            var donationUpdation = dbContext?.Donation.Find(Id);
+            DonationFull donationUpdation = dbContext?.Donation.Find(id);
             if (donationUpdation == null)
             {
                 return NotFound();
@@ -83,5 +100,23 @@ namespace BloodDonationsEF.Controllers
                 return Ok(donationUpdation);
             }
         }
+
+        //now for the deletion part
+        [HttpDelete("DeleteData/{id:Guid}")]
+        public IActionResult DeleteDonations(Guid Id)
+        {
+            var dondele = dbContext?.Donation.Find(Id);
+            if (dondele == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                dbContext.Donation.Remove(dondele);
+                dbContext.SaveChanges();
+                return Ok("Deleted");
+            }
+        }
+       
     }
 }
