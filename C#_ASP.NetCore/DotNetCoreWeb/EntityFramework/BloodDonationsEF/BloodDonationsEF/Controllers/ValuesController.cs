@@ -112,7 +112,7 @@ namespace BloodDonationsEF.Controllers
             }
             else
             {
-                dbContext.Donation.Remove(dondele);
+                dbContext?.Donation.Remove(dondele);
                 dbContext.SaveChanges();
                 return Ok("Deleted");
             }

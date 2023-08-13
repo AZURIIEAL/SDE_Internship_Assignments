@@ -1,0 +1,46 @@
+﻿@page
+@using BloodDonationsEF.Pages;
+@model IndexModel
+@{
+    ViewData["Title"] = "Blood Donations";
+}
+
+<h1>Blood Donations</h1>
+
+<!-- Add Donation Form -->
+<h2>Add Donation</h2>
+<form method="post">
+    <label>Name: <input type="text" name="Name" /></label><br />
+    <label>Blood Group: <input type="text" name="BloodGroup" /></label><br />
+    <label>Email: <input type="email" name="Email" /></label><br />
+    <label>Phone: <input type="tel" name="Phone" /></label><br />
+    <label>Address: <input type="text" name="Address" /></label><br />
+    <button type="submit">Add Donation</button>
+</form>
+
+<!-- List Donations -->
+<h2>All Donations</h2>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Blood Group</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Address</th>
+        <th>Actions</th>
+    </tr>
+    @foreach (var donation in Model.Donations)
+    {
+        <tr>
+            <td>@donation.Name</td>
+            <td>@donation.BloodGroup</td>
+            <td>@donation.Email</td>
+            <td>@donation.Phone</td>
+            <td>@donation.Address</td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@donation.Id">Edit</a> |
+                <a asp-page="./Delete" asp-route-id="@donation.Id">Delete</a>
+            </td>
+        </tr>
+    }
+</table>
