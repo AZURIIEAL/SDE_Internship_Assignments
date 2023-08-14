@@ -18,15 +18,16 @@ const routes: Routes = [
     title: 'Employee Home page',
   },
   {
-    path: 'DepartmentHome',
-    component: DepartmentHomeComponent,
-    title: 'Department Home page',
-  },
-  {
     path: 'EmployeeDetails/:id',
     component: EmployeeDetailsComponent,
     title :'Employee Details'
   },
+  {
+    path: 'DepartmentHome',
+    component: DepartmentHomeComponent,
+    title: 'Department Home page',
+  },
+  
 ];
 
 @NgModule({
