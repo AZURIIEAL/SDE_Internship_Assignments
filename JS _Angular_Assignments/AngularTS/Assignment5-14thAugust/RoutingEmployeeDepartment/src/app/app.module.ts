@@ -7,6 +7,7 @@ import { EmployeeHomeComponent } from './components/employee-home/employee-home.
 import { DepartmentHomeComponent } from './components/department-home/department-home.component';
 import { HomeComponent } from './components/home/home.component';
 import { EmployeeDetailsComponent } from './components/employee-details/employee-details.component';
+import { DepartmentDetailsComponent } from './components/department-details/department-details.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { EmployeeDetailsComponent } from './components/employee-details/employee
     EmployeeHomeComponent,
     DepartmentHomeComponent,
     HomeComponent,
-    EmployeeDetailsComponent
+    EmployeeDetailsComponent,
+    DepartmentDetailsComponent
   ],
   imports: [
     BrowserModule,
