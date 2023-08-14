@@ -152,3 +152,5 @@ D:\Works\ControlQore\SDE_Internship_Assignments\C#_ASP.NetCore\DotNetCoreWeb\Ent
 D:\Works\ControlQore\SDE_Internship_Assignments\C#_ASP.NetCore\DotNetCoreWeb\EntityFramework\BloodDonationsEF\BloodDonationsEF\obj\Debug\net7.0\ref\BloodDonationsEF.dll
 D:\Works\ControlQore\SDE_Internship_Assignments\C#_ASP.NetCore\DotNetCoreWeb\EntityFramework\BloodDonationsEF\BloodDonationsEF\obj\Debug\net7.0\BloodDonationsEF.RazorAssemblyInfo.cache
 D:\Works\ControlQore\SDE_Internship_Assignments\C#_ASP.NetCore\DotNetCoreWeb\EntityFramework\BloodDonationsEF\BloodDonationsEF\obj\Debug\net7.0\BloodDonationsEF.RazorAssemblyInfo.cs
+C:\AbinFiles\Assignments\SDE_Internship_Assignments\C#_ASP.NetCore\DotNetCoreWeb\EntityFramework\BloodDonationsEF\BloodDonationsEF\obj\Debug\net7.0\BloodDonationsEF.RazorAssemblyInfo.cache
+C:\AbinFiles\Assignments\SDE_Internship_Assignments\C#_ASP.NetCore\DotNetCoreWeb\EntityFramework\BloodDonationsEF\BloodDonationsEF\obj\Debug\net7.0\BloodDonationsEF.RazorAssemblyInfo.cs

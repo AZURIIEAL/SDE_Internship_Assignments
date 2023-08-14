@@ -11,10 +11,7 @@ namespace BloodDonationsEF.Pages
     {
         private readonly DonationsAPIDbContext _dbContext;
 
-        public IndexModel(DonationsAPIDbContext dbContext)
-        {
-            _dbContext = dbContext;
-        }
+        public IndexModel(DonationsAPIDbContext dbContext) => _dbContext = dbContext;
 
         public IList<DonationFull> Donations { get; private set; }
 

@@ -9,13 +9,13 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = BloodDonationsEF
 build_property.RootNamespace = BloodDonationsEF
-build_property.ProjectDir = D:\Works\ControlQore\SDE_Internship_Assignments\C#_ASP.NetCore\DotNetCoreWeb\EntityFramework\BloodDonationsEF\BloodDonationsEF\
+build_property.ProjectDir = C:\AbinFiles\Assignments\SDE_Internship_Assignments\C#_ASP.NetCore\DotNetCoreWeb\EntityFramework\BloodDonationsEF\BloodDonationsEF\
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\Works\ControlQore\SDE_Internship_Assignments\C#_ASP.NetCore\DotNetCoreWeb\EntityFramework\BloodDonationsEF\BloodDonationsEF
+build_property.MSBuildProjectDirectory = C:\AbinFiles\Assignments\SDE_Internship_Assignments\C#_ASP.NetCore\DotNetCoreWeb\EntityFramework\BloodDonationsEF\BloodDonationsEF
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/Works/ControlQore/SDE_Internship_Assignments/C\#_ASP.NetCore/DotNetCoreWeb/EntityFramework/BloodDonationsEF/BloodDonationsEF/View/Index.cshtml]
+[C:/AbinFiles/Assignments/SDE_Internship_Assignments/C\#_ASP.NetCore/DotNetCoreWeb/EntityFramework/BloodDonationsEF/BloodDonationsEF/View/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

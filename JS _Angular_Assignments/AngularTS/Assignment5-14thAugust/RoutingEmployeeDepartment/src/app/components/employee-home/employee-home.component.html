@@ -1,0 +1,18 @@
+<div>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>First Name</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let emp of employeeList" (click)="GetDataFunction(emp)">
+          <td>{{ emp.id }}</td>
+          <td>{{ emp.firstName }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  

@@ -3911,19 +3911,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Azuriieal\\.nuget\\packages\\": {}
+    "C:\\Users\\CQ-Abin\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Works\\ControlQore\\SDE_Internship_Assignments\\C#_ASP.NetCore\\DotNetCoreWeb\\EntityFramework\\BloodDonationsEF\\BloodDonationsEF\\BloodDonationsEF.csproj",
+      "projectUniqueName": "C:\\AbinFiles\\Assignments\\SDE_Internship_Assignments\\C#_ASP.NetCore\\DotNetCoreWeb\\EntityFramework\\BloodDonationsEF\\BloodDonationsEF\\BloodDonationsEF.csproj",
       "projectName": "BloodDonationsEF",
-      "projectPath": "D:\\Works\\ControlQore\\SDE_Internship_Assignments\\C#_ASP.NetCore\\DotNetCoreWeb\\EntityFramework\\BloodDonationsEF\\BloodDonationsEF\\BloodDonationsEF.csproj",
-      "packagesPath": "C:\\Users\\Azuriieal\\.nuget\\packages\\",
-      "outputPath": "D:\\Works\\ControlQore\\SDE_Internship_Assignments\\C#_ASP.NetCore\\DotNetCoreWeb\\EntityFramework\\BloodDonationsEF\\BloodDonationsEF\\obj\\",
+      "projectPath": "C:\\AbinFiles\\Assignments\\SDE_Internship_Assignments\\C#_ASP.NetCore\\DotNetCoreWeb\\EntityFramework\\BloodDonationsEF\\BloodDonationsEF\\BloodDonationsEF.csproj",
+      "packagesPath": "C:\\Users\\CQ-Abin\\.nuget\\packages\\",
+      "outputPath": "C:\\AbinFiles\\Assignments\\SDE_Internship_Assignments\\C#_ASP.NetCore\\DotNetCoreWeb\\EntityFramework\\BloodDonationsEF\\BloodDonationsEF\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Azuriieal\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\CQ-Abin\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3931,7 +3931,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\sdk\\7.0.304\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
+        "C:\\Program Files\\dotnet\\sdk\\7.0.302\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -3992,7 +3992,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
       }
     }
   }
