@@ -4,9 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class EmployeeDataService {
-
-  public getData() {
-    return [
+    public empList = [
         {
           id: 1,
           firstName: "Abin",
@@ -41,6 +39,8 @@ export class EmployeeDataService {
         },
         // Add more employee data as needed
       ];
+  public getData() {
+    return this.empList;
 }
 }
 

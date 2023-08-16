@@ -1,3 +1,14 @@
+<div>
+    <form #frm="ngForm">
+        <input type="text" required maxlength="10" [(ngModel)]="searchText" name="searchText"/>
+        <button (click)="onSearch()">Search</button>
+        <button (click)="reset()">Reset</button>
+    </form>
+ 
+</div>
+
+<button (click)="addEmployee()">Add Employee</button>
+
 <div style="padding-left: 45%;
 padding-top: 6%">
     <table>

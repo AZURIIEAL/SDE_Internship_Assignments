@@ -1,0 +1,17 @@
+<form [formGroup]="empFormGroup">
+    <div>
+        <label>First Name</label>
+        <input type="text" formControlName="firstName"/>
+    </div>
+    <div>
+        <label>Last Name</label>
+        <input type="text" formControlName="lastName"/>
+    </div>
+</form>
+
+
+<button (click)="add()">Add</button>
+
+
+<div>Errors</div>
+<div *ngFor="let error of errors">{{error}}</div>

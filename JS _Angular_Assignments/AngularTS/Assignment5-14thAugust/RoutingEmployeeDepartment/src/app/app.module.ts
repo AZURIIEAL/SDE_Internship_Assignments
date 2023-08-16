@@ -8,6 +8,8 @@ import { DepartmentHomeComponent } from './components/department-home/department
 import { HomeComponent } from './components/home/home.component';
 import { EmployeeDetailsComponent } from './components/employee-details/employee-details.component';
 import { DepartmentDetailsComponent } from './components/department-details/department-details.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AddEmployeeComponent } from './components/employee-home/add-employee/add-employee.component';
 
 @NgModule({
   declarations: [
@@ -16,11 +18,14 @@ import { DepartmentDetailsComponent } from './components/department-details/depa
     DepartmentHomeComponent,
     HomeComponent,
     EmployeeDetailsComponent,
-    DepartmentDetailsComponent
+    DepartmentDetailsComponent,
+    AddEmployeeComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
