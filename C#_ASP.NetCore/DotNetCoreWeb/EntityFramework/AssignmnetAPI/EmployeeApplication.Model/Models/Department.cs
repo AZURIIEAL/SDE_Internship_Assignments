@@ -12,6 +12,8 @@ namespace EmployeeApplication.Model.Models
         public string Name { get; set; } = string.Empty;
 
         [Required]
-        public Location? LocationId { get; set; }
+        public int LocationId { get; set; }
+        [Required]
+        public Location? Location { get; set; }
     }
 }

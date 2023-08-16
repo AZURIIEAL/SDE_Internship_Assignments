@@ -683,7 +683,9 @@
       "EmployeeApplication.Repository/1.0.0": {
         "dependencies": {
           "EmployeeApplication.Model": "1.0.0",
-          "Microsoft.EntityFrameworkCore": "7.0.10"
+          "Microsoft.EntityFrameworkCore": "7.0.10",
+          "Microsoft.EntityFrameworkCore.Relational": "7.0.10",
+          "Microsoft.EntityFrameworkCore.SqlServer": "7.0.10"
         },
         "runtime": {
           "EmployeeApplication.Repository.dll": {}

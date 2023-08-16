@@ -20,17 +20,9 @@ namespace EmployeeApplication.API.Controllers
         public IActionResult Add([FromQuery] Employee employee)
         {
             //Need to create a new Donation object
-            var EmployeeNew = new Employee()
-            {
-                Id = Guid.NewGuid(),
-                Name = addDonationData.Name,
-                BloodGroup = addDonationData.BloodGroup,
-                Email = addDonationData.Email,
-                Phone = addDonationData.Phone,
-                Address = addDonationData.Address
-            };
-            dbContext?.Add(donationNEW);
-            return Ok(dbContext?.SaveChanges());
+      
+            dbContext?.Add(employee);
+            dbContext?.SaveChanges(); 
             return Ok(employee);
         }
         [HttpDelete("Delete/{id}")]

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\AbinFiles\\Assignments\\SDE_Internship_Assignments\\C#_ASP.NetCore\\Assignmnet_04\\Assignmnet_04\\Assignmnet_04.csproj": {}
+    "C:\\AbinFiles\\Assignments\\SDE_Internship_Assignments\\C#_ASP.NetCore\\Assignmnet_04_10th_July\\Assignmnet_04\\Assignmnet_04.csproj": {}
   },
   "projects": {
-    "C:\\AbinFiles\\Assignments\\SDE_Internship_Assignments\\C#_ASP.NetCore\\Assignmnet_04\\Assignmnet_04\\Assignmnet_04.csproj": {
+    "C:\\AbinFiles\\Assignments\\SDE_Internship_Assignments\\C#_ASP.NetCore\\Assignmnet_04_10th_July\\Assignmnet_04\\Assignmnet_04.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\AbinFiles\\Assignments\\SDE_Internship_Assignments\\C#_ASP.NetCore\\Assignmnet_04\\Assignmnet_04\\Assignmnet_04.csproj",
+        "projectUniqueName": "C:\\AbinFiles\\Assignments\\SDE_Internship_Assignments\\C#_ASP.NetCore\\Assignmnet_04_10th_July\\Assignmnet_04\\Assignmnet_04.csproj",
         "projectName": "Assignmnet_04",
-        "projectPath": "C:\\AbinFiles\\Assignments\\SDE_Internship_Assignments\\C#_ASP.NetCore\\Assignmnet_04\\Assignmnet_04\\Assignmnet_04.csproj",
+        "projectPath": "C:\\AbinFiles\\Assignments\\SDE_Internship_Assignments\\C#_ASP.NetCore\\Assignmnet_04_10th_July\\Assignmnet_04\\Assignmnet_04.csproj",
         "packagesPath": "C:\\Users\\CQ-Abin\\.nuget\\packages\\",
-        "outputPath": "C:\\AbinFiles\\Assignments\\SDE_Internship_Assignments\\C#_ASP.NetCore\\Assignmnet_04\\Assignmnet_04\\obj\\",
+        "outputPath": "C:\\AbinFiles\\Assignments\\SDE_Internship_Assignments\\C#_ASP.NetCore\\Assignmnet_04_10th_July\\Assignmnet_04\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\CQ-Abin\\AppData\\Roaming\\NuGet\\NuGet.Config",
