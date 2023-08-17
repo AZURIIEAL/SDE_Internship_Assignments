@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { DepartmentDataService } from '../../services/department-data-service.service';
+import { DepartmentDataService } from '../../../services/department-data-service.service';
 import { DeptData } from 'src/app/interfaces/dept-data';
 
 @Component({

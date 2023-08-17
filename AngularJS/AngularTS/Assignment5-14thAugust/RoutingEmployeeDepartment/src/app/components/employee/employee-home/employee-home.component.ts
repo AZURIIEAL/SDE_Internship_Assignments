@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { EmpData } from '../../interfaces/emp-data';
-import { EmployeeDataService } from '../../services/employee-data-service.service';
+import { EmpData } from '../../../interfaces/emp-data';
+import { EmployeeDataService } from '../../../services/employee-data-service.service';
 import { Router } from '@angular/router';
 
 @Component({
