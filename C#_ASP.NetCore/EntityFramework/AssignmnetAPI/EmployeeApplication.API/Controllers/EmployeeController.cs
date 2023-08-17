@@ -11,117 +11,133 @@ namespace EmployeeApplication.API.Controllers
 [ApiController]
 public class EmployeeController : ControllerBase
 {
-    private readonly EmployeeApplicationDbContext _dbContext;
+private readonly EmployeeApplicationDbContext _dbContext;
 
-    public EmployeeController(EmployeeApplicationDbContext dbContext)
+public EmployeeController(EmployeeApplicationDbContext dbContext)
+{
+    this._dbContext = dbContext;
+}
+[HttpPost("add-employee")]
+public async Task<IActionResult> AddAsync([FromQuery] EmployeeDuplicate emp)
+{
+    try
     {
-        this._dbContext = dbContext;
+        Employee EmployeeNew = new Employee
+        {
+            FirstName = emp.FirstName,
+            LastName = emp.LastName,
+            Email = emp.Email,
+            PhoneNumber = emp.PhoneNumber,
+            DepartmentId = emp.DepartmentId,
+        };
+        _dbContext.Employees.Add(EmployeeNew);
+        await _dbContext.SaveChangesAsync();
+        return Ok(EmployeeNew);
     }
-    [HttpPost("add-employee")]
-    public async Task<IActionResult> AddAsync([FromQuery] EmployeeDuplicate emp)
+    catch (Exception ex)
     {
-        try
-        {
-            Employee EmployeeNew = new Employee
-            {
-                FirstName = emp.FirstName,
-                LastName = emp.LastName,
-                Email = emp.Email,
-                PhoneNumber = emp.PhoneNumber,
-                DepartmentId = emp.DepartmentId,
-            };
-            _dbContext.Add(EmployeeNew);
-            await _dbContext.SaveChangesAsync();
-            return Ok(EmployeeNew);
-        }
-        catch (Exception ex)
-        {
-            return StatusCode(500, ex);
-        }
-
-    }
-    [HttpDelete("delete-by-id/{id}")]
-    public async Task<IActionResult> DeleteAsync([FromQuery] int id)
-    {
-        try
-        {
-            var toDelete = await _dbContext.Departments.FindAsync(id);
-            if (toDelete is null)
-            {
-                return NotFound();
-            }
-
-            _dbContext.Departments.Remove(toDelete);
-            await _dbContext.SaveChangesAsync();
-
-            return Ok("Deleted");
-        }
-        catch (Exception ex)
-        {
-            return StatusCode(500, ex);
-        }
+        return StatusCode(500, ex);
     }
 
-
-    [HttpGet("get-by-id/{id}")]
-    public async Task<IActionResult> GetDataAsync(int id)
+}
+[HttpDelete("delete-by-id/{id}")]
+public async Task<IActionResult> DeleteAsync([FromQuery] int id)
+{
+    try
     {
-        try
+        var toDelete = await _dbContext.Employees.FindAsync(id);
+        if (toDelete is null)
         {
-            var toGet = await _dbContext.Departments.FindAsync(id);
-            if (toGet == null)
-            {
-                return NotFound();
-            }
-            else
-            {
-                return Ok(toGet);
-            }
+            return NotFound();
         }
-        catch (Exception ex)
+
+        _dbContext.Employees.Remove(toDelete);
+        await _dbContext.SaveChangesAsync();
+
+        return Ok("Deleted");
+    }
+    catch (Exception ex)
+    {
+        return StatusCode(500, ex);
+    }
+}
+
+
+[HttpGet("get-by-id/{id}")]
+public async Task<IActionResult> GetDataAsync(int id)
+{
+    try
+    {
+        var toGet = await _dbContext.Employees.FindAsync(id);
+        if (toGet == null)
         {
-            return StatusCode(500, ex);
+            return NotFound();
+        }
+        else
+        {
+            return Ok(toGet);
         }
     }
-
-    [HttpGet("get-all")]
-    public async Task<ActionResult<Location>> GetAllAsync()
+    catch (Exception ex)
     {
-        try
-        {
-            var locations = await _dbContext.Departments.ToListAsync();
-            return Ok(locations);
-        }
-        catch (Exception ex)
-        {
-            return StatusCode(500, ex);
-        }
+        return StatusCode(500, ex);
     }
+}
 
-
-    [HttpPut("update-by-id")]
-    public async Task<IActionResult> UpdatebyIdAsync([FromQuery] Department department)
+[HttpGet("get-all")]
+public async Task<ActionResult<Location>> GetAllAsync()
+{
+    try
     {
-        try
-        {
-            Department? toUpdate = await _dbContext.Departments.FindAsync(department.Id);
-            if (toUpdate is null)
-            {
-                return NotFound();
-            }
-            if (string.IsNullOrWhiteSpace(department.Name))
-            {
-                return UnprocessableEntity();
-            }
-            toUpdate.Name = department.Name;
-            await _dbContext.SaveChangesAsync();
-            return Ok(toUpdate);
-        }
-        catch (Exception ex)
-        {
-            return StatusCode(500, ex);
-        }
+        var employees = await _dbContext.Employees.ToListAsync();
+        return Ok(employees);
     }
+    catch (Exception ex)
+    {
+        return StatusCode(500, ex);
+    }
+}
+
+
+[HttpPut("{id}")]
+public async Task<IActionResult> UpdatebyIdAsync(int id,[FromQuery] EmployeeDuplicate emp)
+{
+    try
+    {
+        Employee? toUpdate = await _dbContext.Employees.FindAsync(id);
+        if (toUpdate is null)
+        {
+            return NotFound();
+        }
+        if (!string.IsNullOrWhiteSpace(emp.FirstName))
+        {
+            toUpdate.FirstName = emp.FirstName;
+        }
+        if (!string.IsNullOrWhiteSpace(emp.LastName))
+        {
+            toUpdate.LastName = emp.LastName;
+        }
+        if (!string.IsNullOrWhiteSpace(emp.Email))
+        {
+            toUpdate.Email = emp.Email;
+        }
+        if (!string.IsNullOrWhiteSpace(emp.PhoneNumber))
+        {
+            toUpdate.PhoneNumber = emp.PhoneNumber;
+        }
+        if (!string.IsNullOrWhiteSpace((emp.DepartmentId.ToString())))
+        {
+            toUpdate.FirstName = emp.FirstName;
+        }
+
+        await _dbContext.SaveChangesAsync();
+        return Ok(toUpdate);
+    }
+    catch (Exception ex)
+    {
+        return StatusCode(500, ex);
+    }
+}
 
 }
 }

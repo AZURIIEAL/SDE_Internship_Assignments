@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\AbinFiles\\Assignments\\SDE_Internship_Assignments\\C#_ASP.NetCore\\DotNetCoreWeb\\EntityFramework\\BloodDonationsEF\\BloodDonationsEF\\BloodDonationsEF.csproj": {}
+    "C:\\AbinFiles\\Assignments\\SDE_Internship_Assignments\\C#_ASP.NetCore\\EntityFramework\\BloodDonationsEF\\BloodDonationsEF\\BloodDonationsEF.csproj": {}
   },
   "projects": {
-    "C:\\AbinFiles\\Assignments\\SDE_Internship_Assignments\\C#_ASP.NetCore\\DotNetCoreWeb\\EntityFramework\\BloodDonationsEF\\BloodDonationsEF\\BloodDonationsEF.csproj": {
+    "C:\\AbinFiles\\Assignments\\SDE_Internship_Assignments\\C#_ASP.NetCore\\EntityFramework\\BloodDonationsEF\\BloodDonationsEF\\BloodDonationsEF.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\AbinFiles\\Assignments\\SDE_Internship_Assignments\\C#_ASP.NetCore\\DotNetCoreWeb\\EntityFramework\\BloodDonationsEF\\BloodDonationsEF\\BloodDonationsEF.csproj",
+        "projectUniqueName": "C:\\AbinFiles\\Assignments\\SDE_Internship_Assignments\\C#_ASP.NetCore\\EntityFramework\\BloodDonationsEF\\BloodDonationsEF\\BloodDonationsEF.csproj",
         "projectName": "BloodDonationsEF",
-        "projectPath": "C:\\AbinFiles\\Assignments\\SDE_Internship_Assignments\\C#_ASP.NetCore\\DotNetCoreWeb\\EntityFramework\\BloodDonationsEF\\BloodDonationsEF\\BloodDonationsEF.csproj",
+        "projectPath": "C:\\AbinFiles\\Assignments\\SDE_Internship_Assignments\\C#_ASP.NetCore\\EntityFramework\\BloodDonationsEF\\BloodDonationsEF\\BloodDonationsEF.csproj",
         "packagesPath": "C:\\Users\\CQ-Abin\\.nuget\\packages\\",
-        "outputPath": "C:\\AbinFiles\\Assignments\\SDE_Internship_Assignments\\C#_ASP.NetCore\\DotNetCoreWeb\\EntityFramework\\BloodDonationsEF\\BloodDonationsEF\\obj\\",
+        "outputPath": "C:\\AbinFiles\\Assignments\\SDE_Internship_Assignments\\C#_ASP.NetCore\\EntityFramework\\BloodDonationsEF\\BloodDonationsEF\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\CQ-Abin\\AppData\\Roaming\\NuGet\\NuGet.Config",

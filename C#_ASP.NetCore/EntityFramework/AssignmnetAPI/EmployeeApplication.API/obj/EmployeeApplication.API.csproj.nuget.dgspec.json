@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\AbinFiles\\Assignments\\SDE_Internship_Assignments\\C#_ASP.NetCore\\DotNetCoreWeb\\EntityFramework\\AssignmnetAPI\\EmployeeApplication.API\\EmployeeApplication.API.csproj": {}
+    "C:\\AbinFiles\\Assignments\\SDE_Internship_Assignments\\C#_ASP.NetCore\\EntityFramework\\AssignmnetAPI\\EmployeeApplication.API\\EmployeeApplication.API.csproj": {}
   },
   "projects": {
-    "C:\\AbinFiles\\Assignments\\SDE_Internship_Assignments\\C#_ASP.NetCore\\DotNetCoreWeb\\EntityFramework\\AssignmnetAPI\\EmployeeApplication.API\\EmployeeApplication.API.csproj": {
+    "C:\\AbinFiles\\Assignments\\SDE_Internship_Assignments\\C#_ASP.NetCore\\EntityFramework\\AssignmnetAPI\\EmployeeApplication.API\\EmployeeApplication.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\AbinFiles\\Assignments\\SDE_Internship_Assignments\\C#_ASP.NetCore\\DotNetCoreWeb\\EntityFramework\\AssignmnetAPI\\EmployeeApplication.API\\EmployeeApplication.API.csproj",
+        "projectUniqueName": "C:\\AbinFiles\\Assignments\\SDE_Internship_Assignments\\C#_ASP.NetCore\\EntityFramework\\AssignmnetAPI\\EmployeeApplication.API\\EmployeeApplication.API.csproj",
         "projectName": "EmployeeApplication.API",
-        "projectPath": "C:\\AbinFiles\\Assignments\\SDE_Internship_Assignments\\C#_ASP.NetCore\\DotNetCoreWeb\\EntityFramework\\AssignmnetAPI\\EmployeeApplication.API\\EmployeeApplication.API.csproj",
+        "projectPath": "C:\\AbinFiles\\Assignments\\SDE_Internship_Assignments\\C#_ASP.NetCore\\EntityFramework\\AssignmnetAPI\\EmployeeApplication.API\\EmployeeApplication.API.csproj",
         "packagesPath": "C:\\Users\\CQ-Abin\\.nuget\\packages\\",
-        "outputPath": "C:\\AbinFiles\\Assignments\\SDE_Internship_Assignments\\C#_ASP.NetCore\\DotNetCoreWeb\\EntityFramework\\AssignmnetAPI\\EmployeeApplication.API\\obj\\",
+        "outputPath": "C:\\AbinFiles\\Assignments\\SDE_Internship_Assignments\\C#_ASP.NetCore\\EntityFramework\\AssignmnetAPI\\EmployeeApplication.API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\CQ-Abin\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -29,11 +29,11 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\AbinFiles\\Assignments\\SDE_Internship_Assignments\\C#_ASP.NetCore\\DotNetCoreWeb\\EntityFramework\\AssignmnetAPI\\EmployeeApplication.Model\\EmployeeApplication.Model.csproj": {
-                "projectPath": "C:\\AbinFiles\\Assignments\\SDE_Internship_Assignments\\C#_ASP.NetCore\\DotNetCoreWeb\\EntityFramework\\AssignmnetAPI\\EmployeeApplication.Model\\EmployeeApplication.Model.csproj"
+              "C:\\AbinFiles\\Assignments\\SDE_Internship_Assignments\\C#_ASP.NetCore\\EntityFramework\\AssignmnetAPI\\EmployeeApplication.Model\\EmployeeApplication.Model.csproj": {
+                "projectPath": "C:\\AbinFiles\\Assignments\\SDE_Internship_Assignments\\C#_ASP.NetCore\\EntityFramework\\AssignmnetAPI\\EmployeeApplication.Model\\EmployeeApplication.Model.csproj"
               },
-              "C:\\AbinFiles\\Assignments\\SDE_Internship_Assignments\\C#_ASP.NetCore\\DotNetCoreWeb\\EntityFramework\\AssignmnetAPI\\EmployeeApplication.Repository\\EmployeeApplication.Repository.csproj": {
-                "projectPath": "C:\\AbinFiles\\Assignments\\SDE_Internship_Assignments\\C#_ASP.NetCore\\DotNetCoreWeb\\EntityFramework\\AssignmnetAPI\\EmployeeApplication.Repository\\EmployeeApplication.Repository.csproj"
+              "C:\\AbinFiles\\Assignments\\SDE_Internship_Assignments\\C#_ASP.NetCore\\EntityFramework\\AssignmnetAPI\\EmployeeApplication.Repository\\EmployeeApplication.Repository.csproj": {
+                "projectPath": "C:\\AbinFiles\\Assignments\\SDE_Internship_Assignments\\C#_ASP.NetCore\\EntityFramework\\AssignmnetAPI\\EmployeeApplication.Repository\\EmployeeApplication.Repository.csproj"
               }
             }
           }
@@ -94,14 +94,14 @@
         }
       }
     },
-    "C:\\AbinFiles\\Assignments\\SDE_Internship_Assignments\\C#_ASP.NetCore\\DotNetCoreWeb\\EntityFramework\\AssignmnetAPI\\EmployeeApplication.Model\\EmployeeApplication.Model.csproj": {
+    "C:\\AbinFiles\\Assignments\\SDE_Internship_Assignments\\C#_ASP.NetCore\\EntityFramework\\AssignmnetAPI\\EmployeeApplication.Model\\EmployeeApplication.Model.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\AbinFiles\\Assignments\\SDE_Internship_Assignments\\C#_ASP.NetCore\\DotNetCoreWeb\\EntityFramework\\AssignmnetAPI\\EmployeeApplication.Model\\EmployeeApplication.Model.csproj",
+        "projectUniqueName": "C:\\AbinFiles\\Assignments\\SDE_Internship_Assignments\\C#_ASP.NetCore\\EntityFramework\\AssignmnetAPI\\EmployeeApplication.Model\\EmployeeApplication.Model.csproj",
         "projectName": "EmployeeApplication.Model",
-        "projectPath": "C:\\AbinFiles\\Assignments\\SDE_Internship_Assignments\\C#_ASP.NetCore\\DotNetCoreWeb\\EntityFramework\\AssignmnetAPI\\EmployeeApplication.Model\\EmployeeApplication.Model.csproj",
+        "projectPath": "C:\\AbinFiles\\Assignments\\SDE_Internship_Assignments\\C#_ASP.NetCore\\EntityFramework\\AssignmnetAPI\\EmployeeApplication.Model\\EmployeeApplication.Model.csproj",
         "packagesPath": "C:\\Users\\CQ-Abin\\.nuget\\packages\\",
-        "outputPath": "C:\\AbinFiles\\Assignments\\SDE_Internship_Assignments\\C#_ASP.NetCore\\DotNetCoreWeb\\EntityFramework\\AssignmnetAPI\\EmployeeApplication.Model\\obj\\",
+        "outputPath": "C:\\AbinFiles\\Assignments\\SDE_Internship_Assignments\\C#_ASP.NetCore\\EntityFramework\\AssignmnetAPI\\EmployeeApplication.Model\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\CQ-Abin\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -149,14 +149,14 @@
         }
       }
     },
-    "C:\\AbinFiles\\Assignments\\SDE_Internship_Assignments\\C#_ASP.NetCore\\DotNetCoreWeb\\EntityFramework\\AssignmnetAPI\\EmployeeApplication.Repository\\EmployeeApplication.Repository.csproj": {
+    "C:\\AbinFiles\\Assignments\\SDE_Internship_Assignments\\C#_ASP.NetCore\\EntityFramework\\AssignmnetAPI\\EmployeeApplication.Repository\\EmployeeApplication.Repository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\AbinFiles\\Assignments\\SDE_Internship_Assignments\\C#_ASP.NetCore\\DotNetCoreWeb\\EntityFramework\\AssignmnetAPI\\EmployeeApplication.Repository\\EmployeeApplication.Repository.csproj",
+        "projectUniqueName": "C:\\AbinFiles\\Assignments\\SDE_Internship_Assignments\\C#_ASP.NetCore\\EntityFramework\\AssignmnetAPI\\EmployeeApplication.Repository\\EmployeeApplication.Repository.csproj",
         "projectName": "EmployeeApplication.Repository",
-        "projectPath": "C:\\AbinFiles\\Assignments\\SDE_Internship_Assignments\\C#_ASP.NetCore\\DotNetCoreWeb\\EntityFramework\\AssignmnetAPI\\EmployeeApplication.Repository\\EmployeeApplication.Repository.csproj",
+        "projectPath": "C:\\AbinFiles\\Assignments\\SDE_Internship_Assignments\\C#_ASP.NetCore\\EntityFramework\\AssignmnetAPI\\EmployeeApplication.Repository\\EmployeeApplication.Repository.csproj",
         "packagesPath": "C:\\Users\\CQ-Abin\\.nuget\\packages\\",
-        "outputPath": "C:\\AbinFiles\\Assignments\\SDE_Internship_Assignments\\C#_ASP.NetCore\\DotNetCoreWeb\\EntityFramework\\AssignmnetAPI\\EmployeeApplication.Repository\\obj\\",
+        "outputPath": "C:\\AbinFiles\\Assignments\\SDE_Internship_Assignments\\C#_ASP.NetCore\\EntityFramework\\AssignmnetAPI\\EmployeeApplication.Repository\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\CQ-Abin\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -173,8 +173,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\AbinFiles\\Assignments\\SDE_Internship_Assignments\\C#_ASP.NetCore\\DotNetCoreWeb\\EntityFramework\\AssignmnetAPI\\EmployeeApplication.Model\\EmployeeApplication.Model.csproj": {
-                "projectPath": "C:\\AbinFiles\\Assignments\\SDE_Internship_Assignments\\C#_ASP.NetCore\\DotNetCoreWeb\\EntityFramework\\AssignmnetAPI\\EmployeeApplication.Model\\EmployeeApplication.Model.csproj"
+              "C:\\AbinFiles\\Assignments\\SDE_Internship_Assignments\\C#_ASP.NetCore\\EntityFramework\\AssignmnetAPI\\EmployeeApplication.Model\\EmployeeApplication.Model.csproj": {
+                "projectPath": "C:\\AbinFiles\\Assignments\\SDE_Internship_Assignments\\C#_ASP.NetCore\\EntityFramework\\AssignmnetAPI\\EmployeeApplication.Model\\EmployeeApplication.Model.csproj"
               }
             }
           }
