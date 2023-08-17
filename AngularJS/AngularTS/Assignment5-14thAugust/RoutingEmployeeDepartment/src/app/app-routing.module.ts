@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
-import { EmployeeHomeComponent } from './components/employee-home/employee-home.component';
-import { DepartmentHomeComponent } from './components/department-home/department-home.component';
-import { EmployeeDetailsComponent } from './components/employee-details/employee-details.component';
+import { EmployeeHomeComponent } from './components/employee/employee-home/employee-home.component';
+import { DepartmentHomeComponent } from './components/department/department-home/department-home.component';
+import { EmployeeDetailsComponent } from './components/employee/employee-details/employee-details.component';
 
 const routes: Routes = [
   {
@@ -13,17 +13,17 @@ const routes: Routes = [
     title: 'Home page',
   },
   {
-    path: 'EmployeeHome',
+    path: 'employee-home',
     component: EmployeeHomeComponent,
     title: 'Employee Home page',
   },
   {
-    path: 'EmployeeDetails/:id',
+    path: 'employee-details/:id',
     component: EmployeeDetailsComponent,
     title :'Employee Details'
   },
   {
-    path: 'DepartmentHome',
+    path: 'department-home',
     component: DepartmentHomeComponent,
     title: 'Department Home page',
   },

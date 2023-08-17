@@ -17,6 +17,8 @@ export class EmployeeHomeComponent {
 
   GetDataFunction(emp: EmpData) {
     //Route becomes Employeedetails/id
-    this.router.navigate(['EmployeeDetails', emp.id])
+    this.router.navigate(['employee-details', emp.id])
   }
+  //Declaring an empty array to store the search/filtered data.
+  filteredNameList: EmpData[] = [];
 }

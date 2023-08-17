@@ -13,10 +13,10 @@ export class HomeComponent {
     
   }
   NavigateToEmployeeHome(){
-    this.router.navigate(['./EmployeeHome'])
+    this.router.navigate(['./employee-home'])
   }
   NavigateToDepartmentHome(){
-    this.router.navigate(['./DepartmentHome']) 
+    this.router.navigate(['./department-home']) 
   }
 
 }
