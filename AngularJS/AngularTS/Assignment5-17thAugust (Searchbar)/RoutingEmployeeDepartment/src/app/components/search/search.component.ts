@@ -25,6 +25,6 @@ export class SearchComponent {
 
   onSubmit() {
     // Emit the search query as a string
-    // this.searchEvent.emit(this.searchForm.value.searchInput!);
+    this.searchEvent.emit(this.searchForm.value.searchInput!);
   }
 }
