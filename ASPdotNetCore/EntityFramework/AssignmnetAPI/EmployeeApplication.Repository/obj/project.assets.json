@@ -3202,11 +3202,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\AbinFiles\\Assignments\\SDE_Internship_Assignments\\C#_ASP.NetCore\\EntityFramework\\AssignmnetAPI\\EmployeeApplication.Repository\\EmployeeApplication.Repository.csproj",
+      "projectUniqueName": "C:\\AbinFiles\\Assignments\\SDE_Internship_Assignments\\ASPdotNetCore\\EntityFramework\\AssignmnetAPI\\EmployeeApplication.Repository\\EmployeeApplication.Repository.csproj",
       "projectName": "EmployeeApplication.Repository",
-      "projectPath": "C:\\AbinFiles\\Assignments\\SDE_Internship_Assignments\\C#_ASP.NetCore\\EntityFramework\\AssignmnetAPI\\EmployeeApplication.Repository\\EmployeeApplication.Repository.csproj",
+      "projectPath": "C:\\AbinFiles\\Assignments\\SDE_Internship_Assignments\\ASPdotNetCore\\EntityFramework\\AssignmnetAPI\\EmployeeApplication.Repository\\EmployeeApplication.Repository.csproj",
       "packagesPath": "C:\\Users\\CQ-Abin\\.nuget\\packages\\",
-      "outputPath": "C:\\AbinFiles\\Assignments\\SDE_Internship_Assignments\\C#_ASP.NetCore\\EntityFramework\\AssignmnetAPI\\EmployeeApplication.Repository\\obj\\",
+      "outputPath": "C:\\AbinFiles\\Assignments\\SDE_Internship_Assignments\\ASPdotNetCore\\EntityFramework\\AssignmnetAPI\\EmployeeApplication.Repository\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\CQ-Abin\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -3223,8 +3223,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\AbinFiles\\Assignments\\SDE_Internship_Assignments\\C#_ASP.NetCore\\EntityFramework\\AssignmnetAPI\\EmployeeApplication.Model\\EmployeeApplication.Model.csproj": {
-              "projectPath": "C:\\AbinFiles\\Assignments\\SDE_Internship_Assignments\\C#_ASP.NetCore\\EntityFramework\\AssignmnetAPI\\EmployeeApplication.Model\\EmployeeApplication.Model.csproj"
+            "C:\\AbinFiles\\Assignments\\SDE_Internship_Assignments\\ASPdotNetCore\\EntityFramework\\AssignmnetAPI\\EmployeeApplication.Model\\EmployeeApplication.Model.csproj": {
+              "projectPath": "C:\\AbinFiles\\Assignments\\SDE_Internship_Assignments\\ASPdotNetCore\\EntityFramework\\AssignmnetAPI\\EmployeeApplication.Model\\EmployeeApplication.Model.csproj"
             }
           }
         }

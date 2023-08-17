@@ -1,0 +1,29 @@
+<div>
+  <div>
+    <app-search (searchEvent)="handleSearch($event)"></app-search>
+  </div>
+  
+  <!-- Display the filteredNameList or employeeList -->
+  <div *ngFor="let emp of (filteredNameList.length ? filteredNameList : employeeList)">
+    <!-- Display employee details -->
+  </div>
+</div>
+<div style="padding-left: 45%;
+padding-top: 6%">
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>First Name</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let emp of filteredNameList" (click)="GetDataFunction(emp)">
+          <td>{{ emp.id }}</td>
+          <td>{{ emp.firstName }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  

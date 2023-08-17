@@ -1,0 +1,35 @@
+import { Component } from '@angular/core';
+import { EmpData } from '../../../interfaces/emp-data';
+import { EmployeeDataService } from '../../../services/employee-data-service.service';
+import { Router } from '@angular/router';
+
+@Component({
+  selector: 'app-employee-home',
+  templateUrl: './employee-home.component.html',
+  styleUrls: ['./employee-home.component.sass'],
+})
+export class EmployeeHomeComponent {
+  constructor(
+    private router: Router,
+    private empService: EmployeeDataService
+  ) {}
+
+  employeeList: Array<EmpData> = this.empService.getData();
+
+  GetDataFunction(emp: EmpData) {
+    //Route becomes Employeedetails/id
+    this.router.navigate(['employee-details', emp.id]);
+  }
+  //Declaring an empty array to store the search/filtered data.
+  filteredNameList: EmpData[] = [];
+
+  ngOnInit() {
+    this.filteredNameList = this.employeeList;
+  }
+
+  handleSearch(searchQuery: string): void {
+    this.filteredNameList = this.employeeList.filter((emp) =>
+      emp.firstName.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+  }
+}

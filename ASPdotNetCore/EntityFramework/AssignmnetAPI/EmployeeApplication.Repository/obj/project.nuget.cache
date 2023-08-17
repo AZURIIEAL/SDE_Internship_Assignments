@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "T1RJFfXbbp/Y2STYq5SR7Xm3NtTCdrHo0hMdqiCGAZFIRPvvUFJIIuNmVAWe1+LwhlHS3jmjJKE5OeeGKkcp5Q==",
+  "dgSpecHash": "eZR4WbUXOVGA5UDdwn+0zK4UllGumTvo8TSmiCJU2/uIhmC23J8AEMIGRHm5U/jLKFVROg6UlAq553rlHywtpg==",
   "success": true,
-  "projectFilePath": "C:\\AbinFiles\\Assignments\\SDE_Internship_Assignments\\C#_ASP.NetCore\\EntityFramework\\AssignmnetAPI\\EmployeeApplication.Repository\\EmployeeApplication.Repository.csproj",
+  "projectFilePath": "C:\\AbinFiles\\Assignments\\SDE_Internship_Assignments\\ASPdotNetCore\\EntityFramework\\AssignmnetAPI\\EmployeeApplication.Repository\\EmployeeApplication.Repository.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\CQ-Abin\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\CQ-Abin\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

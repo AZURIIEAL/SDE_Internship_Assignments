@@ -1,0 +1,29 @@
+<div class="card" style="padding-left: 45%;
+padding-top: 6%" *ngIf="selectedDepartmentDetail">
+    <div class="card__content">
+      <p
+        style="
+          color: aliceblue;
+          padding-left: 20px;
+          padding-top: 10px;
+          text-decoration: underline;
+        "
+      >
+        The Details Of_{{ selectedDepartmentDetail.DepartmentName }}
+      </p>
+      <p style="color: aliceblue; padding-left: 20px">
+        ID: {{ selectedDepartmentDetail.id }}
+      </p>
+      <p style="color: aliceblue; padding-left: 20px">
+        Department Head: {{ selectedDepartmentDetail.Head_of_department }}sss
+      </p>
+      <p style="color: aliceblue; padding-left: 20px">
+        Deputy Head: {{ selectedDepartmentDetail.Deputy_Head_of_department }}
+      </p>
+    </div>
+    <div style="padding-top: 30px;padding-left: 30px;">
+      <button class="button-33" (click)="goBack()">Go Back</button>
+    </div>
+    
+  </div>
+  

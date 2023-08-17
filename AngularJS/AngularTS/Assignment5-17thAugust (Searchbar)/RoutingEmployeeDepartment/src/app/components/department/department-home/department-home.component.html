@@ -1,0 +1,19 @@
+<div style="padding-left: 45%;
+padding-top: 6%"*ngIf="!selectedDepartmentDetail">
+    <p>Select the row of the employee you want to know more about</p>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>First Name</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let dept of departmentList" (click)="GetDataFunction(dept)">
+          <td>{{ dept.id }}</td>
+          <td>{{ dept.DepartmentName }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <app-department-details [selectedDepartmentDetail]="selectedDepartmentDetail" (goBackEvent)="handleGoBack()"></app-department-details>
