@@ -7,20 +7,19 @@ import { debounceTime } from 'rxjs';
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.sass'],
   standalone: true,
-  imports:[ReactiveFormsModule]
-
+  imports: [ReactiveFormsModule],
 })
 export class SearchComponent {
   @Output() searchEvent = new EventEmitter<string>();
 
   searchForm = new FormGroup({
-    searchInput: new FormControl('')
+    searchInput: new FormControl(''),
   });
 
   ngOnInit() {
     this.searchForm.controls['searchInput'].valueChanges
       .pipe(debounceTime(250))
-      .subscribe(x => this.searchEvent.emit(x || ''));
+      .subscribe((x) => this.searchEvent.emit(x || ''));
   }
 
   onSubmit() {

@@ -2,14 +2,10 @@
   <div>
     <app-search (searchEvent)="handleSearch($event)"></app-search>
   </div>
-  
-  <!-- Display the filteredNameList or employeeList -->
-  <div *ngFor="let emp of (filteredNameList.length ? filteredNameList : employeeList)">
-    <!-- Display employee details -->
-  </div>
+  <div *ngFor="let emp of (filteredNameList.length ? filteredNameList : employeeList)"></div>
 </div>
 <div style="padding-left: 35%;
-padding-top: 6%">
+padding-top: 1%">
     <table>
       <thead>
         <tr>
