@@ -31,7 +31,7 @@ export class EmployeeHomeComponent implements OnInit {
     this.router.navigate([''])
   }
   addEmployee(){
-    this.router.navigate([''])
+    this.router.navigate(['add-employee'])
   }
 
   handleSearch(searchQuery: string): void {

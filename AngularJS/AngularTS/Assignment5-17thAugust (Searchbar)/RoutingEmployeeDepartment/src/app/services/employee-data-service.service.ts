@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http'
 import { EmpData } from '../interfaces/emp-data';
+import { IaddEmp } from '../interfaces/iadd-emp';
 
 @Injectable({
   providedIn: 'root'
@@ -13,5 +14,7 @@ export class EmployeeDataService {
     
     return this.http.get<EmpData[]>(`${this.url}/get-all`)
 }
+public addEmployee(employee: IaddEmp) {
+  return this.http.post(`${this.url}/add-employee`, employee);
 }
-
+}

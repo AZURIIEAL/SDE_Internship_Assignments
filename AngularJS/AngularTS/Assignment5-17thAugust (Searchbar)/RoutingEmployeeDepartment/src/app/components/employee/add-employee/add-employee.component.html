@@ -1,1 +1,47 @@
-<p>add-employee works!</p>
+<div>
+    <h3>Add New Employee</h3>
+    <form [formGroup]="addEmpForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="firstName">First Name </label>
+        <input style="margin-left: 10%;" type="text" id="firstName" formControlName="firstName" class="form-control">
+        <div style="color: red;" *ngIf="addEmpForm?.get('firstName')?.invalid && (addEmpForm?.get('firstName')?.dirty || addEmpForm?.get('firstName')?.touched)">
+          <div *ngIf="addEmpForm?.get('firstName')?.hasError('required')">First Name is required.</div>
+          <div *ngIf="addEmpForm?.get('firstName')?.hasError('minlength')">First Name must be at least 2 characters long.</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="lastName">Last Name </label>
+        <input style="margin-left: 10%;" type="text" id="lastName" formControlName="lastName" class="form-control">
+        <div style="color: red;" *ngIf="addEmpForm.get('lastName')?.invalid && (addEmpForm.get('lastName')?.dirty || addEmpForm.get('lastName')?.touched)">
+          <div *ngIf="addEmpForm.get('lastName')?.hasError('required')">Last Name is required.</div>
+          <div *ngIf="addEmpForm.get('lastName')?.hasError('minlength')">Last Name must be at least 2 characters long.</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="email">Email </label>
+        <input style="margin-left: 15%;" type="email" id="email" formControlName="email" class="form-control">
+        <div style="color: red;" *ngIf="addEmpForm.get('email')?.invalid && (addEmpForm.get('email')?.dirty || addEmpForm.get('email')?.touched)">
+          <div *ngIf="addEmpForm.get('email')?.hasError('required')">Email is required.</div>
+          <div *ngIf="addEmpForm.get('email')?.hasError('email')">Invalid email format.</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="phoneNumber">Phone Number </label>
+        <input style="margin-left: 5%;" type="tel" id="phoneNumber" formControlName="phoneNumber" class="form-control">
+        <div style="color: red;" *ngIf="addEmpForm.get('phoneNumber')?.invalid && (addEmpForm.get('phoneNumber')?.dirty || addEmpForm.get('phoneNumber')?.touched)">
+          <div *ngIf="addEmpForm.get('phoneNumber')?.hasError('required')">Phone Number is required.</div>
+          <div *ngIf="addEmpForm.get('phoneNumber')?.hasError('pattern')">Invalid phone number format.</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="departmentId">Department ID </label>
+        <input style="margin-left: 5%;" type="number" id="departmentId" formControlName="departmentId" class="form-control">
+        <div style="color: red;" *ngIf="addEmpForm.get('departmentId')?.invalid && (addEmpForm.get('departmentId')?.dirty || addEmpForm.get('departmentId')?.touched)">
+          <div *ngIf="addEmpForm.get('departmentId')?.hasError('required')">Department ID is required.</div>
+          <div *ngIf="addEmpForm.get('departmentId')?.hasError('min')">Department ID must be greater than or equal to 1.</div>
+        </div>
+      </div>
+      <button style="margin-top: 5%;" type="submit" class="button-33" [disabled]="!addEmpForm.valid">Add Employee </button>
+    </form>
+  </div>
+  
