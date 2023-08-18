@@ -1,46 +1,17 @@
 import { Injectable } from '@angular/core';
+import {HttpClient} from '@angular/common/http'
+import { EmpData } from '../interfaces/emp-data';
 
 @Injectable({
   providedIn: 'root'
 })
 export class EmployeeDataService {
-
+  constructor(private http:HttpClient) {  
+  }
+  url:string ='https://localhost:44335/api/Employee';
   public getData() {
-    return [
-        {
-          id: 1,
-          firstName: "Abin",
-          lastName: "Binu",
-          age: 21,
-          department: "Development",
-          position: "Junior"
-        },
-        {
-          id: 2,
-          firstName: "Xavier",
-          lastName: "George",
-          age: 32,
-          department: "HR",
-          position: "Senior"
-        },
-        {
-          id: 3,
-          firstName: "Alex",
-          lastName: "Mathew",
-          age: 28,
-          department: "Development",
-          position: "Senior"
-        },
-        {
-          id: 4,
-          firstName: "Revathy", 
-          lastName: "Prabhu",
-          age: 21,
-          department: "HR",
-          position: "Trainee"
-        },
-        // Add more employee data as needed
-      ];
+    
+    return this.http.get<EmpData[]>(`${this.url}/get-all`)
 }
 }
 

@@ -1,0 +1,11 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\EmployeeApplication.API",
+    "\\EmployeeApplication.API\\Controllers",
+    "\\EmployeeApplication.Repository",
+    "\\EmployeeApplication.Repository\\Context"
+  ],
+  "SelectedNode": "\\EmployeeApplication.Repository\\Context\\EmployeeApplicationDbContext.cs",
+  "PreviewInSolutionExplorer": false
+}

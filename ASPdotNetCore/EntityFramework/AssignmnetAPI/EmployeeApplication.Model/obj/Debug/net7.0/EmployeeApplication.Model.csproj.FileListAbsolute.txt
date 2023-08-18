@@ -22,3 +22,15 @@ C:\AbinFiles\Assignments\SDE_Internship_Assignments\C#_ASP.NetCore\EntityFramewo
 C:\AbinFiles\Assignments\SDE_Internship_Assignments\C#_ASP.NetCore\EntityFramework\AssignmnetAPI\EmployeeApplication.Model\obj\Debug\net7.0\refint\EmployeeApplication.Model.dll
 C:\AbinFiles\Assignments\SDE_Internship_Assignments\C#_ASP.NetCore\EntityFramework\AssignmnetAPI\EmployeeApplication.Model\obj\Debug\net7.0\EmployeeApplication.Model.pdb
 C:\AbinFiles\Assignments\SDE_Internship_Assignments\C#_ASP.NetCore\EntityFramework\AssignmnetAPI\EmployeeApplication.Model\obj\Debug\net7.0\ref\EmployeeApplication.Model.dll
+C:\AbinFiles\Assignments\SDE_Internship_Assignments\ASPdotNetCore\EntityFramework\AssignmnetAPI\EmployeeApplication.Model\bin\Debug\net7.0\EmployeeApplication.Model.deps.json
+C:\AbinFiles\Assignments\SDE_Internship_Assignments\ASPdotNetCore\EntityFramework\AssignmnetAPI\EmployeeApplication.Model\bin\Debug\net7.0\EmployeeApplication.Model.dll
+C:\AbinFiles\Assignments\SDE_Internship_Assignments\ASPdotNetCore\EntityFramework\AssignmnetAPI\EmployeeApplication.Model\bin\Debug\net7.0\EmployeeApplication.Model.pdb
+C:\AbinFiles\Assignments\SDE_Internship_Assignments\ASPdotNetCore\EntityFramework\AssignmnetAPI\EmployeeApplication.Model\obj\Debug\net7.0\EmployeeApplication.Model.csproj.AssemblyReference.cache
+C:\AbinFiles\Assignments\SDE_Internship_Assignments\ASPdotNetCore\EntityFramework\AssignmnetAPI\EmployeeApplication.Model\obj\Debug\net7.0\EmployeeApplication.Model.GeneratedMSBuildEditorConfig.editorconfig
+C:\AbinFiles\Assignments\SDE_Internship_Assignments\ASPdotNetCore\EntityFramework\AssignmnetAPI\EmployeeApplication.Model\obj\Debug\net7.0\EmployeeApplication.Model.AssemblyInfoInputs.cache
+C:\AbinFiles\Assignments\SDE_Internship_Assignments\ASPdotNetCore\EntityFramework\AssignmnetAPI\EmployeeApplication.Model\obj\Debug\net7.0\EmployeeApplication.Model.AssemblyInfo.cs
+C:\AbinFiles\Assignments\SDE_Internship_Assignments\ASPdotNetCore\EntityFramework\AssignmnetAPI\EmployeeApplication.Model\obj\Debug\net7.0\EmployeeApplication.Model.csproj.CoreCompileInputs.cache
+C:\AbinFiles\Assignments\SDE_Internship_Assignments\ASPdotNetCore\EntityFramework\AssignmnetAPI\EmployeeApplication.Model\obj\Debug\net7.0\EmployeeApplication.Model.dll
+C:\AbinFiles\Assignments\SDE_Internship_Assignments\ASPdotNetCore\EntityFramework\AssignmnetAPI\EmployeeApplication.Model\obj\Debug\net7.0\refint\EmployeeApplication.Model.dll
+C:\AbinFiles\Assignments\SDE_Internship_Assignments\ASPdotNetCore\EntityFramework\AssignmnetAPI\EmployeeApplication.Model\obj\Debug\net7.0\EmployeeApplication.Model.pdb
+C:\AbinFiles\Assignments\SDE_Internship_Assignments\ASPdotNetCore\EntityFramework\AssignmnetAPI\EmployeeApplication.Model\obj\Debug\net7.0\ref\EmployeeApplication.Model.dll

@@ -85,7 +85,7 @@ public async Task<IActionResult> GetDataAsync(int id)
 }
 
 [HttpGet("get-all")]
-public async Task<ActionResult<Location>> GetAllAsync()
+public async Task<IActionResult> GetAllAsync()
 {
     try
     {

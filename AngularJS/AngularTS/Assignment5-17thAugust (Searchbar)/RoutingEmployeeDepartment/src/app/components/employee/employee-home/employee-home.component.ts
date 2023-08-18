@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { EmpData } from '../../../interfaces/emp-data';
 import { EmployeeDataService } from '../../../services/employee-data-service.service';
 import { Router } from '@angular/router';
@@ -8,13 +8,13 @@ import { Router } from '@angular/router';
   templateUrl: './employee-home.component.html',
   styleUrls: ['./employee-home.component.sass'],
 })
-export class EmployeeHomeComponent {
+export class EmployeeHomeComponent implements OnInit {
   constructor(
     private router: Router,
     private empService: EmployeeDataService
   ) {}
 
-  employeeList: Array<EmpData> = this.empService.getData();
+  employeeList: Array<EmpData> = [];
 
   GetDataFunction(emp: EmpData) {
     //Route becomes Employeedetails/id
@@ -24,12 +24,21 @@ export class EmployeeHomeComponent {
   filteredNameList: EmpData[] = [];
 
   ngOnInit() {
+    this.fetchEmployeeData();
     this.filteredNameList = this.employeeList;
   }
 
   handleSearch(searchQuery: string): void {
     this.filteredNameList = this.employeeList.filter((emp) =>
       emp.firstName.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+  }
+  private fetchEmployeeData(): void {
+    this.empService.getData().subscribe(
+      (data: EmpData[]) => {
+        this.employeeList = data;
+        this.filteredNameList = data;
+      }
     );
   }
 }
