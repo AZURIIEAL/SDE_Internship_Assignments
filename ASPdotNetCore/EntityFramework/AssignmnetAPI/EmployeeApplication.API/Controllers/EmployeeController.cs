@@ -41,7 +41,7 @@ public async Task<IActionResult> AddAsync([FromQuery] EmployeeDuplicate emp)
 
 }
 [HttpDelete("delete-by-id/{id}")]
-public async Task<IActionResult> DeleteAsync([FromQuery] int id)
+public async Task<IActionResult> DeleteAsync( int id)
 {
     try
     {

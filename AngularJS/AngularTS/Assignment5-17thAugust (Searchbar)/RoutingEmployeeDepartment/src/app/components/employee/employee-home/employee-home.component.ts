@@ -27,6 +27,12 @@ export class EmployeeHomeComponent implements OnInit {
     this.fetchEmployeeData();
     this.filteredNameList = this.employeeList;
   }
+  goBack(){
+    this.router.navigate([''])
+  }
+  addEmployee(){
+    this.router.navigate([''])
+  }
 
   handleSearch(searchQuery: string): void {
     this.filteredNameList = this.employeeList.filter((emp) =>

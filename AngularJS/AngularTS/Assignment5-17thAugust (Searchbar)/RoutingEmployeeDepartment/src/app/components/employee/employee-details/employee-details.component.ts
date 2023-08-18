@@ -16,6 +16,11 @@ export class EmployeeDetailsComponent implements OnInit {
     private empService: EmployeeDataService
   ) {}
   ngOnInit(): void {
-    this.employeeDetail = this.activatedRoute.snapshot.params['id'];
+    this.activatedRoute.params.subscribe((params) => {
+      const id = Number(params['id']);
+      this.empService.getData().subscribe((empDetails: EmpData[]) => {
+        this.employeeDetail = empDetails.find((emp) => emp.id === id);
+      });
+    });
   }
 }

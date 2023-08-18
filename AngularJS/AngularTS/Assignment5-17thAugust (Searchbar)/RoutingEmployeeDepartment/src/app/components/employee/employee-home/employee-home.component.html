@@ -2,24 +2,37 @@
   <div>
     <app-search (searchEvent)="handleSearch($event)"></app-search>
   </div>
-  <div *ngFor="let emp of (filteredNameList.length ? filteredNameList : employeeList)"></div>
-</div>
-<div style="padding-left: 35%;
-padding-top: 1%">
-    <table>
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>First Name</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let emp of filteredNameList" (click)="GetDataFunction(emp)">
-          <td>{{ emp.id }}</td>
-          <td>{{ emp.firstName }}</td>
-        </tr>
-      </tbody>
-    </table>
+  <div
+    *ngFor="
+      let emp of filteredNameList.length ? filteredNameList : employeeList
+    "
+  ></div>
+  <div style="padding-left: 35%">
+    <p>More options</p>
+    <button style='margin-right:16px' (click)="addEmployee()">Add Employee</button>
+    <button style='margin-right:16px' (click)="goBack()">Go Back</button>
   </div>
-  
-  
+</div>
+<div style="padding-left: 35%; padding-top: 2%">
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>First Name</th>
+        <th>Process</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let emp of filteredNameList">
+        <td>{{ emp.id }}</td>
+        <td>{{ emp.firstName }}</td>
+        <td>
+          <button class="button-33" (click)="GetDataFunction(emp)">
+            See Details</button
+          ><button class="button-33">Update</button
+          ><button class="button-33">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

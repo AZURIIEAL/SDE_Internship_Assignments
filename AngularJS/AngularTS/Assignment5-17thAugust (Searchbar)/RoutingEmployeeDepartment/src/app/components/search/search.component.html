@@ -1,7 +1,7 @@
 <div style="padding-left: 35%; padding-top: 6%">
-    <H3>Enter the name which you want to find</H3>
+    <H3>Enter the name of the Employee</H3>
   <form [formGroup]="searchForm" (ngSubmit)="onSubmit()">
-    <input type="text" placeholder="Search..." formControlName="searchInput" />
+    <input id="searchQueryInput" type="text" placeholder="Search..." formControlName="searchInput" />
     <button type="submit">Search</button>
   </form>
 </div>
