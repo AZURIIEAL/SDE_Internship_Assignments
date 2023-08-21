@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, numberAttribute } from '@angular/core';
 import { EmpData } from '../../../interfaces/emp-data';
 import { EmployeeDataService } from '../../../services/employee-data-service.service';
-import { Router } from '@angular/router';
+import { Router,ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-employee-home',
@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 export class EmployeeHomeComponent implements OnInit {
   constructor(
     private router: Router,
+    private route:ActivatedRoute,
     private empService: EmployeeDataService
   ) {}
 
@@ -24,27 +25,35 @@ export class EmployeeHomeComponent implements OnInit {
   filteredNameList: EmpData[] = [];
 
   ngOnInit() {
-    this.fetchEmployeeData();
-    this.filteredNameList = this.employeeList;
+    this.initialize();
   }
-  goBack(){
-    this.router.navigate([''])
+  goBack() {
+    this.router.navigate(['']);
   }
-  addEmployee(){
-    this.router.navigate(['add-employee'])
+  addEmployee() {
+    this.router.navigate(['add-employee']);
   }
+  onReload(){
+    this.router.navigate(['employee-home'],{relativeTo:this.route})}
 
   handleSearch(searchQuery: string): void {
     this.filteredNameList = this.employeeList.filter((emp) =>
       emp.firstName.toLowerCase().includes(searchQuery.toLowerCase())
     );
   }
+  private initialize(){
+    this.fetchEmployeeData();
+  }
   private fetchEmployeeData(): void {
-    this.empService.getData().subscribe(
-      (data: EmpData[]) => {
-        this.employeeList = data;
-        this.filteredNameList = data;
-      }
-    );
+    this.empService.getData().subscribe((data: EmpData[]) => {
+      this.employeeList = data;
+      this.filteredNameList = data;
+    });
+  }
+  DeleteFn(emp: EmpData) {
+    this.empService.delEmployee(emp.id).subscribe(() => {
+      this.initialize();
+      // console.log('Employee deleted successfully.', response);
+    });
   }
 }

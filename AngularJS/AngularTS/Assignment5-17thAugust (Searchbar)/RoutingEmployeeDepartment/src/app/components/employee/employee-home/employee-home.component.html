@@ -9,8 +9,10 @@
   ></div>
   <div style="padding-left: 35%">
     <p>More options</p>
-    <button style='margin-right:16px' (click)="addEmployee()">Add Employee</button>
-    <button style='margin-right:16px' (click)="goBack()">Go Back</button>
+    <button style="margin-right: 16px" (click)="addEmployee()">
+      Add Employee
+    </button>
+    <button style="margin-right: 16px" (click)="goBack()">Go Back</button>
   </div>
 </div>
 <div style="padding-left: 35%; padding-top: 2%">
@@ -30,7 +32,7 @@
           <button class="button-33" (click)="GetDataFunction(emp)">
             See Details</button
           ><button class="button-33">Update</button
-          ><button class="button-33">Delete</button>
+          ><button class="button-33" (click)="DeleteFn(emp)">Delete</button>
         </td>
       </tr>
     </tbody>

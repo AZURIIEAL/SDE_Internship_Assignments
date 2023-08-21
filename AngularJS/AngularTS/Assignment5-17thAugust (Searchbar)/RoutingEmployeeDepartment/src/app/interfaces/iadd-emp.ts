@@ -1,7 +1,7 @@
 export interface IaddEmp {
-    firstName: string;
-    lastName: string;
-    email: string;
-    phoneNumber: string;
-    departmentId: number;
+    FirstName: string;
+    LastName: string;
+    Email: string;
+    PhoneNumber: string;
+    DepartmentId: number;
 }
