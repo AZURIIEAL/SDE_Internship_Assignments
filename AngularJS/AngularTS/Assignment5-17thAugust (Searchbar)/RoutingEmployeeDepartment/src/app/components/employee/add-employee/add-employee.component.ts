@@ -70,7 +70,7 @@ export class AddEmployeeComponent {
         console.log('Employee added successfully', response);
         this.router.navigate(['employee-home']);
       });
-    this.router.navigate(['employee-home']);
+    
   }
 
 }
