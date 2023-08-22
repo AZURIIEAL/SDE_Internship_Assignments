@@ -18,4 +18,10 @@ export class EmployeeDataService {
   public delEmployee(employeeId: number) {
     return this.http.delete(`${this.url}/delete-by-id/${employeeId}`);
   }
+  public getById(employeeId: number) {
+    return this.http.get<EmpData>(`${this.url}/get-by-id/${employeeId}`);
+  }
+  public updateEmployee(employeeId: number) {
+    return this.http.delete(`${this.url}/delete-by-id/${employeeId}`);
+  }
 }

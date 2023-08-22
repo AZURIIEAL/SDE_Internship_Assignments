@@ -33,6 +33,9 @@ export class EmployeeHomeComponent implements OnInit {
   addEmployee() {
     this.router.navigate(['add-employee']);
   }
+  doUpdate(emp:EmpData){
+    this.router.navigate(['update-employee', emp.id])
+  }
   onReload(){
     this.router.navigate(['employee-home'],{relativeTo:this.route})}
 
