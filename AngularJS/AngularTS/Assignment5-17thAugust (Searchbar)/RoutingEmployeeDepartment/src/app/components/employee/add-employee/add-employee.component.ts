@@ -22,13 +22,6 @@ export class AddEmployeeComponent {
     private employeeDataService: EmployeeDataService,
     private router: Router
   ) {
-    const newEmployee: IaddEmp = {
-      FirstName: '',
-      LastName: '',
-      Email: '',
-      PhoneNumber: '',
-      DepartmentId: 0,
-    };
   }
   addEmpForm = new FormGroup({
     firstName: new FormControl('', [
