@@ -21,7 +21,7 @@ export class EmployeeDataService {
   public getById(employeeId: number) {
     return this.http.get<EmpData>(`${this.url}/get-by-id/${employeeId}`);
   }
-  public updateEmployee(employeeId: number) {
-    return this.http.delete(`${this.url}/delete-by-id/${employeeId}`);
+  public updateEmployee(employee: IaddEmp,id:Number) {
+    return this.http.put(`${this.url}/${id}`, employee);
   }
 }
