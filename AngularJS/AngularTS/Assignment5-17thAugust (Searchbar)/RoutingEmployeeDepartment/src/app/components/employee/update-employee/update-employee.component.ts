@@ -30,7 +30,6 @@ constructor(
   private router: Router,
   private activatedRoute: ActivatedRoute,
 ) {
-  const tempServiceData:EmpData = employeeDataService.getD;
   const newEmployee: IaddEmp = {
     FirstName: '',
     LastName: '',
