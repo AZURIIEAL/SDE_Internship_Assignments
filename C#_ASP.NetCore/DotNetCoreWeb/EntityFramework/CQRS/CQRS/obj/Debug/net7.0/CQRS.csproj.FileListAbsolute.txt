@@ -1,0 +1,15 @@
+C:\AbinFiles\Assignments\SDE_Internship_Assignments\C#_ASP.NetCore\DotNetCoreWeb\EntityFramework\CQRS\CQRS\obj\Debug\net7.0\CQRS.csproj.AssemblyReference.cache
+C:\AbinFiles\Assignments\SDE_Internship_Assignments\C#_ASP.NetCore\DotNetCoreWeb\EntityFramework\CQRS\CQRS\obj\Debug\net7.0\CQRS.GeneratedMSBuildEditorConfig.editorconfig
+C:\AbinFiles\Assignments\SDE_Internship_Assignments\C#_ASP.NetCore\DotNetCoreWeb\EntityFramework\CQRS\CQRS\obj\Debug\net7.0\CQRS.AssemblyInfoInputs.cache
+C:\AbinFiles\Assignments\SDE_Internship_Assignments\C#_ASP.NetCore\DotNetCoreWeb\EntityFramework\CQRS\CQRS\obj\Debug\net7.0\CQRS.AssemblyInfo.cs
+C:\AbinFiles\Assignments\SDE_Internship_Assignments\C#_ASP.NetCore\DotNetCoreWeb\EntityFramework\CQRS\CQRS\obj\Debug\net7.0\CQRS.csproj.CoreCompileInputs.cache
+C:\AbinFiles\Assignments\SDE_Internship_Assignments\C#_ASP.NetCore\DotNetCoreWeb\EntityFramework\CQRS\CQRS\bin\Debug\net7.0\CQRS.exe
+C:\AbinFiles\Assignments\SDE_Internship_Assignments\C#_ASP.NetCore\DotNetCoreWeb\EntityFramework\CQRS\CQRS\bin\Debug\net7.0\CQRS.deps.json
+C:\AbinFiles\Assignments\SDE_Internship_Assignments\C#_ASP.NetCore\DotNetCoreWeb\EntityFramework\CQRS\CQRS\bin\Debug\net7.0\CQRS.runtimeconfig.json
+C:\AbinFiles\Assignments\SDE_Internship_Assignments\C#_ASP.NetCore\DotNetCoreWeb\EntityFramework\CQRS\CQRS\bin\Debug\net7.0\CQRS.dll
+C:\AbinFiles\Assignments\SDE_Internship_Assignments\C#_ASP.NetCore\DotNetCoreWeb\EntityFramework\CQRS\CQRS\bin\Debug\net7.0\CQRS.pdb
+C:\AbinFiles\Assignments\SDE_Internship_Assignments\C#_ASP.NetCore\DotNetCoreWeb\EntityFramework\CQRS\CQRS\obj\Debug\net7.0\CQRS.dll
+C:\AbinFiles\Assignments\SDE_Internship_Assignments\C#_ASP.NetCore\DotNetCoreWeb\EntityFramework\CQRS\CQRS\obj\Debug\net7.0\refint\CQRS.dll
+C:\AbinFiles\Assignments\SDE_Internship_Assignments\C#_ASP.NetCore\DotNetCoreWeb\EntityFramework\CQRS\CQRS\obj\Debug\net7.0\CQRS.pdb
+C:\AbinFiles\Assignments\SDE_Internship_Assignments\C#_ASP.NetCore\DotNetCoreWeb\EntityFramework\CQRS\CQRS\obj\Debug\net7.0\CQRS.genruntimeconfig.cache
+C:\AbinFiles\Assignments\SDE_Internship_Assignments\C#_ASP.NetCore\DotNetCoreWeb\EntityFramework\CQRS\CQRS\obj\Debug\net7.0\ref\CQRS.dll
